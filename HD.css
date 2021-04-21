@@ -1,0 +1,3822 @@
+/*/
+/***********************************************************************************************************/
+/*HD CSS STYLES***********************************************************************************/
+/*humanidadesdigitais.org/HD.css****************************************************************************/
+/*for HD_Template.html, MAP/MAP_template.html***************************************************************
+/***********************************************************************************************************/
+
+
+
+
+/*______________COLOR PALETTE_______________*/
+/**/
+
+
+/*Blues with yellows pallete*/
+:root {
+   --base: #264d73;
+
+   --light: #204060;
+   --lighter: #336699;
+   --lighter-lighter: #6699cc; /*#d9e6f2;*/
+
+   --dark: #19334d;
+   --darker: #132639;
+
+   --dark-soft: #19334d;/*#2b3c4d*/
+
+   --accent: #ff9933;
+   --accent-light:  #ffe066;
+   --accent-lighter: #ffe0b3;
+   --accent-lighter-lighter: #ffe680;
+   --accent-superlight:#ffffb3;
+   --accent-lighter-transp: #ffffe6;/*rgb(255, 224, 102, 0.7);*/
+   --accent-pale:  rgb(255, 230, 153, 0.2); /*#ffe699;*/
+
+   --alert: #ff3333;
+   --alert-soft: #ff9966;
+
+   --offwhite:#e6e6e6;
+
+   --green: #66cc99; /*#ccffcc;*/
+   --green-soft: rgb(204, 255, 204, 0.5);
+   --green-strong: #339966;/*#669999; #ccff99;*/
+
+   --black-transp: rgb(0, 0, 0, 0.5);
+   --white-transp: rgb(255, 255, 255, 0.5);
+
+   }
+
+
+/*/
+/*********************************************************************************************************/
+/*Html styles******************************************************************************************/
+/*********************************************************************************************************/
+
+
+
+
+
+/*set root font style; works better if font sizes are set with rem (not em)*/
+html {font-size:16px;}
+
+        /*/////////////////////////////*/
+        /*SMALL SCREENS*/
+        /*MAKE base font smaller*/
+
+        @media screen
+        and (max-width: 800px)
+                {html {font-size:14px;}
+            }
+        /*/////////////////////////////*/
+
+
+/*/
+/*********************************************************************************************************/
+/*body styles******************************************************************************************/
+/*********************************************************************************************************/
+
+body {
+ margin: 0;
+ padding: 0;
+ background-color: #ffffff;
+ color: #111;
+}
+
+        /*/////////////////////////////*/
+        /*add a padding, for roll-down
+
+        @media screen
+        and (max-width: 800px)
+                {body {padding-top: 60px;}
+            }*/
+        /*/////////////////////////////*/
+
+    /*default body link styles*********************************************************/
+
+    a:link {
+     color: #669999;
+     text-decoration: none;
+    }
+    a:active {
+     color: #669999;
+    }
+    a:visited {
+     color: #669999;
+     text-decoration: none;
+    }
+    a:hover {
+     color: #ff9900;
+     text-decoration: none;
+     background: #ffffff;
+    }
+    a.plain {
+     text-decoration: none;
+    }
+
+
+
+    /*default body header styles******************************************************/
+    h1 {
+       font-weight: normal;
+       text-align: left;
+       font-size: 150%;
+    }
+
+    h1 a:hover {
+     color: #cccccc;
+     text-decoration: none;
+     background: #ffffff;
+    }
+
+    h2 {
+       font-weight: normal;
+       text-align: left;
+       font-size: 120%;
+    }
+
+    h3 {
+       font-weight: normal;
+       text-align: left;
+       font-size: 100%;
+    }
+
+    h4 {
+       font-weight: normal;
+       text-align: left;
+       font-size: 100%;
+    }
+
+    h5 {
+       font-weight: normal;
+       text-align: left;
+       font-size: 95%;
+    }
+
+    h6 {
+       font-weight: normal;
+       text-align: left;
+       font-size: 95%;
+    }
+
+
+/*/
+/*********************************************************************************************************/
+/*DIV styles*************************************************************************************************/
+/*********************************************************************************************************/
+
+/*DIVs syntax to level 3***************/
+
+    /*/[1]#Content////////////////////////*/
+    /*////[2]#Header//////////////////////*/
+    /*///////[3]#Navbar///////////////////*/
+    /*/////////[2]#Main///////////////////*/
+    /*////////////[3]#Entry_1/////////////*/
+    /*////////////[3]#Entry_2/////////////*/
+    /*////////////[3]#Sidebar/////////////*/
+    /*/[1]#Navbar-bottom//////////////////*/
+    /*/[1]#Footer/////////////////////////*/
+    /*////[2]#Footer_1////////////////////*/
+    /*////[2]#Footer_2////////////////////*/
+
+/*********************************************************************************************************/
+/*First level DIV: #Content*************************************************************************************************/
+/*********************************************************************************************************/
+
+#Content {
+ line-height: 125%
+ background-color: #ffffff;
+}
+
+    /*#Content classes: different backgrounds*/
+
+    .HD {
+        background-color: #ffffff;
+        }
+
+
+    /*#Content children****************************************************************/
+
+
+    /*------------TOP MENUS THAT FIX ON SCROLLING THE PAGE*-----------/
+     *
+     *
+
+/*The fixed block*/
+/*/
+
+/*First a not-fixed div behind the fixed div
+ *for transparency effect,
+ *and to hold #Top anchor*/
+
+#BehindFixedBlock {
+     position: absolute;
+     top: 0;
+     right: 0;
+     z-index: 1;
+
+     width: 100%;
+     height: 50px;
+
+     background-color: #000000;
+     background: rgba(0,0,0,0.3);
+     }
+
+
+#FixedBlock {
+     position: fixed;
+     top: 0;
+     right: 0;
+     z-index: 2;
+
+     overflow: hidden;
+
+     width: 100%;
+     height: 50px;
+
+     background-color: #ffffff;
+     background: rgba(255,255,255,0.9);
+
+     box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.3);
+}
+
+
+
+/*Add class -Low to #Head after #FixedBlock*/
+/*Active only for small screens*/
+
+        /*/////////////////////////*/
+        @media screen
+        and (max-width: 800px) {
+                .Low {
+                    position: relative;
+                    margin-top: 60px;
+                    padding-top: 20px;
+                    }
+                }
+        /*/////////////////////////*/
+
+
+
+
+    /*#HiddenMenu---------------------------------------/
+
+    /*To make this menu appear only when page scrolls 200px,
+      add class -WithHiddenmenu to #Header, #Main*/
+
+    #HiddenMenu {
+        position: fixed;
+	top: 0;
+	z-index:1;
+
+        width: 100%;
+	height: 50px;
+
+        background-color: #ffffff;
+        background: rgba(255,255,255,0.8);
+        box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.3);
+    }
+
+        /*/////////////////////////////*/
+        /*At 50 top and z-index 3 to appear always*/
+        /*In this case add class DropdownNavbar-WithHiddenMenu to Dropdown in Header
+         *As a result, normal Dropdown will hide in small screens*/
+
+        @media screen
+        and (max-width: 800px) {
+                #HiddenMenu {
+                    top: 50;
+                    z-index:100;
+                    height: 50px;
+                    background-color: #ffffff;
+                    background: none;
+                    box-shadow: none;
+                    }
+                }
+        /*Do not activate the margin when there is dropdown-content .long*/
+        @media screen
+        and (max-width: 800px) {
+                #HiddenMenu.withlongdropdown {
+                    top: 0;
+                    z-index:3;
+                    }
+                }
+
+        /*/////////////////////////////*/
+
+
+    /*Normal #Content children************************************************/
+
+    /*#Header***************************************************************************/
+
+    #Header {
+
+        padding: 0vw;
+        text-align: left;
+        width: 100vw;
+        background-color: #ffffff;
+        }
+
+        /*Header elements styles***********************************************************/
+
+        #Header h1 {
+         padding-left: 0.2250em;
+         padding-top: 1em;
+         padding-bottom: 0px;
+         font-family: EB Garamond, 'Book Antiqua', Georgia,  Serif;
+         font-size: 4rem;/*5vw;3.5em;*/
+         font-weight: normal;
+         text-align: left;
+         display: inline-block;
+        }
+
+        #Header h2 {
+         padding-left: 0.6250em;
+         padding-top: 0.6250em;
+         padding-bottom: 0px;
+         font-family: EB Garamond, 'Book Antiqua', Georgia,  Serif;
+         font-size: 200%;/*2em;*/
+         font-weight: normal;
+         text-align: left;
+         display: inline-block;
+        }
+
+        #Header p {
+         padding-left: 0.6250em;
+         padding-top: 0px;
+         padding-bottom: 0px;
+         font-family: EB Garamond, 'Book Antiqua', Georgia,  Serif;
+         font-size: 1.3rem;/*1.5vw;0.8em;*/
+         line-height: 100%;
+         text-align: left;
+         display: inline-block;
+        }
+
+        #Header p.nopadding {
+         padding-left: 0.6250em;
+         padding-top: 0px;
+         padding-bottom: 0px;
+         font-family: Verdana, Arial, Helvetica, sans-serif;
+         font-size: 80%;/*1em;*/
+         text-align: left;
+         display: inline-block;
+        }
+
+/*Header classes******************************/
+
+/*This makes HiddenMenu 'hide'*/
+#Header.WithHiddenMenu {
+top: 0;
+position:absolute;
+z-index:2;
+}
+
+        /*/////////////////////////////*/
+        /*This makes HiddenMenu always visible*/
+        @media screen
+        and (max-width: 800px) {
+                #Header.WithHiddenMenu
+                {margin-top: 50px;
+                padding-top: 30px;
+                height: 30vw;
+                z-index: 2;
+                }
+        }
+        @media screen
+        and (max-width: 650px) {
+                #Header.WithHiddenMenu
+                {margin-top: 50px;
+                padding-top: 30px;
+                height: 120px;
+                z-index: 2;
+                }
+        }
+        /*/////////////////////////////*/
+
+/*Header children************************************************************/
+
+#Header-Title {
+padding: 0;
+text-align: left;
+width: 100vw;
+height: 220px;
+}
+
+         /*/////////////////////////////*/
+         /*SMALL SCREENS*/
+         /*Set height to Header-Title*/
+         @media screen
+         and (max-width: 800px) {
+
+                 #Header-Title {
+                     height: 40vw;
+                 }
+             }
+         @media screen
+         and (max-width: 650px) {
+
+                 #Header-Title {
+                     height: 135px;
+                 }
+             }
+         /*/////////////////////////////*/
+
+        /*Header-Title elements*****************************************************/
+
+        #Header-Title a:link {
+            color: #000000;
+            text-decoration: none;
+           }
+
+        #Header-Title   a:visited {
+            color: #000000;
+            text-decoration: none;
+           }
+
+        #Header-Title   a:hover {
+            color: #999999;
+            text-decoration: none;
+            background: #ffffff;
+           }
+
+
+
+        /*Header-Title classes************************************************************/
+
+        .Header-Title.black {
+         background-color: #ffffff;
+        }
+        .Header-Title.black h1 {
+          color: #000000;
+        }
+        .Header-Title.black p {
+         color: #333333;
+        }
+
+        .Header-Title.white {
+         background-color: #ffffff;
+        }
+
+        .Header-Title.white h1 {
+          color: #000000;
+        }
+        .Header-Title.white p {
+         color: #333333;
+        }
+
+        /*/////////////////////////////////////////////////*/
+        /*SMALL SCREENS////////////////////////////////////*/
+        /*Header adjustments///////////////////////////////*/
+
+        /*TO MAKE #Header and its elements up to this point SMALLER*/
+              @media screen
+              and (max-width: 800px) {
+                #Header {padding-top: 0vw;}
+                #Header-Title {padding-top: 0vw; padding-bottom: 0vh; margin-top:0;}
+                #Header h1 {padding-left: 2vh; padding-top: 0vh; padding-bottom: 0vh; margin-bottom:0; font-size: 8vw;}
+                #Header p {padding-left: 2.5vh; padding-top: 0vh; padding-bottom: 2vh; margin-top: 1vh; font-size: 3vw; display: block;}
+                }
+        /*/////////////////////////////////////////////////*/
+
+
+/*#Header child 2, Navbar************************************************************************************************************************/
+
+#Navbar {
+
+ padding-left: 0em;
+ background-color: #ffffff;
+ }
+
+
+/*#Navbar classes******************************************************************/
+
+
+/*DropdownNavbar
+*/
+/*Basic structure :
+/*
+/DropdownNavbar (HD, MAp, Hidden)
+//////dropdown
+///////////falsebutton (withcontent, active, hold, keepwhite)
+///////////a
+///////////i
+///////////dropdown-content (long) !!!Hidden by default
+////////////////a
+*/
+
+/*.DropdownNavbar*******************************************************************/
+
+
+/*[1] CONTAINERS:==================================================================*/
+/*Sizes, positions, colors==============================================================*/
+
+
+/******************************/
+/*Container I - DropdownNavbar*/
+
+.DropdownNavbar {
+  overflow: hidden;
+
+  width: 100%;
+
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 50px;
+
+  font-size: 0.7rem;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  }
+
+  .DropdownNavbar.shadowbottom {
+    box-shadow: 0px 10px 5px -7px rgba(0,0,0,0.2);
+    border-bottom: 1px solid #cccccc;}
+
+                /*/////////////////////////////////*/
+                @media screen
+                and (max-width: 800px) {
+                .DropdownNavbar {
+                    font-size: 0.75rem;
+                    margin-bottom: 0;
+                   }
+                }
+                /*/////////////////////////////////*/
+
+                /*/////////////////////////////*/
+                /*TO HIDE DropdownNavbar in small screens
+                when there is a HiddenMenu*/
+                @media screen
+                and (max-width: 800px) {
+                        .DropdownNavbar.WithHiddenMenu
+                        {display: none;}
+
+                        }
+                /*/////////////////////////////*/
+
+
+.DropdownNavbar.HD,
+.DropdownNavbar.MAP {
+    margin: 0;
+
+    background-color: #ffffff;
+    color: #000000;
+    }
+
+
+
+/* Dropdown content inside a #HiddenMenu(hidden by default) */
+.DropdownNavbar.hidden {
+    background-color: transparent;
+    }
+
+    /*///////////////////////*/
+    @media screen
+    and (max-width: 800px) {
+            .DropdownNavbar.hidden {
+              width: 100%;
+              height: 50px;
+              /*background:rgba(255,255,255, 0.7); if FixedBlock is black*/
+
+              padding-top: 20px;
+              background-color: #ffffff;
+              background: rgb(255,255,255, 0.8);
+              box-shadow: 0px 10px 10px -10px rgba(0,0,0,0.3);
+              }
+    }
+    /*///////////////////////*/
+
+
+
+    /*///////////////////////*/
+    @media screen
+    and (max-width: 800px) {
+            .DropdownNavbar.long {
+              width: 190px;
+              /*background:rgba(255,255,255, 0.7); if FixedBlock is black*/
+              }
+    }
+    /*///////////////////////*/
+
+
+/****************************************/
+/*Container II - DROPDOWN***************/
+
+/*Size, position of the dropdown sub-container*/
+.dropdown {
+    overflow: hidden;
+    float: left;
+
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    background-color: inherit;
+}
+
+            /*/////////////////////////////////*/
+            @media screen
+            and (max-width: 800px) {
+            .dropdown.hidden {
+                background-color: transparent;
+              }
+            }
+
+
+
+.dropdown.floatright {
+    float: right;
+    /*width: 200px;*/
+    }
+
+
+/****************************************/
+/*Container III - DROPDOWN-CONTENT*******/
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+}
+
+
+
+/*.dropdown-active class: always display*/
+.dropdown-content.dropdown-active {
+  display: block;
+  position: absolute;
+}
+
+.dropdown-content.HD,
+.dropdown-content.MAP {
+ z-index: 1;
+ width: 100%;/*100vw;*/
+
+ height: 50px;
+ margin-left: 95px;
+ margin-top: -80px;
+
+ background-color: transparent;
+}
+            /*/////////////////////////////////*/
+            @media screen
+            and (max-width: 800px) {
+            .dropdown-content.HD,
+            .dropdown-content.MAP {
+                height: auto;
+                margin-left: 0;
+                margin-top: 0;
+              }
+            }
+
+            /*@media screen
+            and (max-width: 800px) {
+            .dropdown-content.MAP {
+              margin-left: 90px;
+              margin-top: -80px;
+
+              }
+            }*/
+            /*/////////////////////////////////*/
+
+
+.dropdown-content.hidden {
+  overflow-y: auto;
+
+  width: 160px;/*100vw;*/
+
+  margin-top: 50px;
+
+  border-right: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+  border-left: 1px solid #999999;
+
+  background-color: #ffffff;
+  background:rgba(255,255,255, 0.9);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
+  }
+
+            /*///////////////////////*/
+            @media screen
+            and (max-width: 800px) {
+                    .dropdown-content.hidden {
+                        /*margin-left: 116px;*/
+                        width: 160px;
+                        background:rgba(255,255,255);
+                    }
+            }
+            /*///////////////////////*/
+
+.dropdown-content.long {
+  z-index: 5;
+
+  overflow-y: auto;
+
+  margin-top: 50px;
+
+  width: 180px;
+  height: 89vh;
+
+
+  border-right: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+  border-left: 1px solid #999999;
+
+  background-color: #ffffff;
+  background:rgba(255,255,255, 0.9);
+
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
+}
+
+                /*/////////////////////////////////*/
+                @media screen and (max-width: 800px) {
+                .dropdown-content.long {
+
+                  width: inherit;
+
+                  background-color: #ffffff;
+                  background:rgba(255,255,255, 0.9);
+                  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
+                }
+            }
+
+/*Styled scrollbar for dropdown-content*/
+.dropdown-content.long::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.dropdown-content.long::-webkit-scrollbar
+{
+	width: 7px;
+	background-color: #F5F5F5;
+}
+
+.dropdown-content.long::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #999999;/*#555;*/
+}
+
+/******************************/
+/*Sub-Containers: FALSEBUTTONS*/
+/*Size and position*/
+
+.falsebutton {
+  height: 50px;
+  width: 55px;
+
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  margin: 0;
+
+  font-size: inherit;
+}
+
+            /*///////////////////////*/
+            @media screen
+            and (max-width: 800px) {
+                    .falsebutton {width: 45px;}
+            }
+            /*///////////////////////*/
+
+.falsebutton.HD,
+.falsebutton.MAP {text-align: center;}
+
+.falsebutton.hidden {
+  float: left;
+  text-align: left;
+  background-color: transparent;
+}
+
+            /*/////////////////////////*/
+            @media screen
+            and (max-width: 800px) {
+                    .falsebutton-long {
+                        width: 100%;
+                        height: 45px;}
+                        }
+            /*/////////////////////////*/
+
+
+/*Width of falsebuttons with content*/
+.falsebutton.withcontent {
+    width: 70px;
+    background-color: transparent;
+}
+                /*///////////////////////*/
+                @media screen
+                and (max-width: 800px) {
+                        .falsebutton.withcontent {width: 60px;}
+                }
+                /*///////////////////////*/
+
+
+
+/*========================================*/
+/*[2] LINKS ==============================*/
+/*    Link sizes, positions and styles   */
+
+
+.DropdownNavbar a {
+  font-family: inherit;
+  text-decoration: inherit;
+  text-transform: inherit;
+  font-size: inherit;
+}
+            /*/////////////////////////*/
+             @media screen
+            and (max-width: 800px) {
+            .DropdownNavbar a {font-size: inherit;}
+            }
+            /*//////////////////////////*/
+
+
+.DropdownNavbar.HD a,
+.DropdownNavbar.MAP a {
+  float: center;
+  text-align: left;
+}
+            /*/////////////////////////*/
+             @media screen
+            and (max-width: 800px) {
+            .DropdownNavbar a {float: left;}
+            }
+            /*//////////////////////////*/
+
+
+.falselink:link {
+    text-transform: none;
+    color: #999999;
+}
+
+
+/* Links inside the dropdown */
+
+.dropdown.hidden a {
+  float: left;
+  text-align: left;
+  background-color: transparent;
+  }
+
+                /*////////////////////////////////////////////*/
+                /*Less padding, for button to fit on black bar*/
+                @media screen
+                and (max-width: 800px) {
+                .DropdownNavbar-long a {
+                    display: block;
+                    color: inherit;
+                    padding-top: 2px;
+                    padding-bottom: 1px;
+                    padding-left: 0.3125em;
+                    padding-right: 0.3125em;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-size: inherit;/*0.75rem; 0.75em;*/
+                    }
+                }
+                /*////////////////////////////////////////////*/
+
+/* Links inside the dropdown-content */
+
+.dropdown-content a {
+  text-align: left;
+
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.dropdown-content.HD a,
+.dropdown-content.MAP a {
+  display: inline-block;
+  float: none;
+}
+
+.dropdown-content.hidden a {
+    display: block;
+    float: none;
+}
+            /*/////////////////////////////////*/
+            @media screen and (max-width: 800px) {
+             .dropdown:hover .dropdown-content.HD a,
+             .dropdown:hover .dropdown-content.MAP a
+             {display: block; }
+            }
+            /*/////////////////////////////////*/
+
+.dropdown-content.long a {
+  display: block;
+  float: none;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 0.6250em;
+  padding-right: 0.3125em;
+
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+                /*///////////////////////////////////////////*/
+                /*to normalize dropdown-content links padding*/
+                @media screen
+                and (max-width: 800px) {
+                .dropdown-content-long a {
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    }
+                }
+                /*///////////////////////////////////////////*/
+
+/*=======================================*/
+/*HOVER BEHAVIOURS=======================*/
+/*=======================================*/
+
+
+/*LINKS hover behaviours=================*/
+
+    .DropdownNavbar.HD a:link,
+    .DropdownNavbar.MAP a:link {
+      background-color: transparent;
+      color: #000000;
+    }
+
+    .DropdownNavbar.HD a:visited,
+    .DropdownNavbar.MAP a:visited {
+      background-color: transparent;
+      color: #000000;
+    }
+
+    .DropdownNavbar.HD a:hover {
+      background-color: transparent;
+      color: #669999;
+    }
+
+    .DropdownNavbar.MAP a:hover {
+      background-color: transparent;
+      color: #999999;
+    }
+
+            /*/////////////////////////*/
+            @media screen
+            and (max-width: 800px) {
+                        .DropdownNavbar a:hover
+                        {color: #999999; background-color: #ffffff;}
+            }
+
+
+    /*.DropdownNavbar .dropdown .dropdown-content .activelink*/
+    .dropdown-content.HD .activelink
+    {
+      background-color: transparent;
+      color: #999999;
+    }
+
+    .dropdown-content.MAP .activelink {
+      background-color: transparent;
+      color: #999999;
+    }
+
+    .dropdownNavbar.MAP .dropdown .dropdown-content a:hover {
+      background-color: transparent;
+      color: #999999;
+    }
+
+        /*/////////////////////////////////*/
+        @media screen
+        and (max-width: 800px) {
+                    .DropdownNavbar.MAP a:hover
+                    {color: #999999; background-color: #transparent;}
+        }
+        /*/////////////////////////////////*/
+
+        /*////////////////////////////////////////////*/
+        @media screen
+        and (max-width: 800px) {
+                .DropdownNavbar.HD .dropdown-content.HD a:link,
+                .DropdownNavbar.HD .dropdown-content.HD a:visited,
+                .DropdownNavbar.MAP .dropdown-content.MAP a:link,
+                .DropdownNavbar.MAP .dropdown-content.MAP a:visited
+                {text-decoration: none; color: #000000;}
+                }
+
+        @media screen
+        and (max-width: 800px) {
+                .DropdownNavbar.HD .dropdown-content a:hover,
+                .DropdownNavbar.MAP .dropdown-content a:hover
+                {text-decoration: none; color: #999999; background-color: #ffffff}
+                }
+        /*///////////////////////////////////////////*/
+
+
+
+
+
+    /*Link behaviours, hidden*/
+
+    .DropdownNavbar.hidden a:link,
+    .dropdown.hidden a:link,
+    .falsebutton.hidden a:link {
+          text-decoration: none;
+          color: #666666;
+          background: transparent;
+          }
+
+    .DropdownNavbar.hidden a:visited,
+    .dropdown.hidden a:visited,
+    .falsebutton.hidden a:visited {
+          text-decoration: none;
+          color: #666666;
+          background: transparent;
+          }
+
+    .DropdownNavbar.hidden a:hover,
+    .dropdown.hidden a:hover,
+    .falsebutton.hidden a:hover {
+          text-decoration: none;
+          color: #000000;
+          background: #ffffff;
+          }
+
+    .dropdown-content.hidden a:link {
+          text-decoration: none;
+          color: #999999;
+          background: transparent;
+          }
+
+    .dropdown-content.hidden a:visited {
+          text-decoration: none;
+          color: #999999;
+          background: transparent;
+          }
+
+    .dropdown-content.hidden a:hover {
+          text-decoration: none;
+          color: #000000;
+          background: #ffffff;
+          }
+
+
+            /*////////////////////////////////////////////*/
+            @media screen
+            and (max-width: 800px) {
+                    .dropdown-content.hidden a:link,
+                    .dropdown-content.hidden a:visited
+                    {text-decoration: none; color: #000000;}
+                    }
+            @media screen
+            and (max-width: 800px) {
+                    .dropdown-content.hidden a:hover
+                    {text-decoration: none; color: #999999;}
+                    }
+            /*///////////////////////////////////////////*/
+
+
+/*CONTAINER HOVER BEHAVIOURS=======================================================*/
+/*dropdown, falsebutton, dropdown-content*/
+
+
+
+/*DISPLAY x NOT DISPLAY dropdown-content*/
+
+        /* Show the dropdown menu on hover */
+        .DropdownNavbar .dropdown:hover .dropdown-content,
+        .DropdownNavbar .dropdown .dropdown-content:hover,
+        .DropdownNavbar .dropdown:hover
+        {display: block; }
+
+
+/*[3.2] STYLES*/
+
+
+        /*[3.2.1] Behaviour of .active/.hold
+         when other containers are hovered*/
+
+        /*(1) falsebutton .active*/
+
+        /*(a) Preparation: holds background in active button*/
+
+        .DropdownNavbar.HD .falsebutton.active {
+          color: #ffffff;
+          background: url("Images/HD_barra.png");
+          }
+
+        .DropdownNavbar.MAP .falsebutton.active {
+          color: #ffffff;
+          background-color: #000000;
+          }
+
+            /*///////////////////////////////////*/
+            /*White background on active*/
+            @media screen
+            and (max-width: 800px) {
+                        .DropdownNavbar.HD .falsebutton.active {
+                            color: #000000;
+                            background: none;
+                            background-color: #ffffff;}
+            }
+
+            /*Transparent background on active*/
+            @media screen
+            and (max-width: 800px) {
+                        .DropdownNavbar.MAP .falsebutton.active {
+                            color: #000000;
+                            background: none;
+                            background-color: transparent;}
+            }
+            /*/////////////////////////////////*/
+
+        /*(b) Make active button turn white
+              when others are hovered*/
+
+        .DropdownNavbar:hover .falsebutton.active,
+        .dropdown:hover .falsebutton.active {
+          background: none;
+          background-color: transparent;
+          color: #000000;
+        }
+
+        /*(c) Makes .hold button show a border
+              when dropdown-content is shown*/
+
+        /*Preparation: .hold: width = 10px less than dropdown-content*/
+        .falsebutton.withcontent.hold {width: 130px;}
+        .falsebutton.withcontent.hold.long {width: 150px;}
+
+                /*//////////////////////////////*/
+                @media screen
+                and (max-width: 800px) {
+                            .falsebutton.withcontent.hold {width: 130px;}
+                              }
+                /*//////////////////////////////*/
+
+
+        /*Makes a border around the .hold button
+        when the dropdown content is shown */
+        /*goes with a dropdown-content with the same borders*/
+        .dropdown:hover .falsebutton.hold {
+        background-color: #ffffff;
+        border-top: 1px solid #cccccc;
+        border-right: 1px solid #cccccc;
+        border-left: 1px solid #cccccc;
+        }
+
+
+        /*(e) Make button text white, falsebutton.withcontent
+              and keep white on hover, all*/
+
+        .falsebutton.HD:hover {color: #ffffff; background-color: transparent;}
+        .falsebutton.MAP:hover {color: #ffffff; background-color: transparent;}
+        .falsebutton.hidden:hover {color: #000000; background-color: transparent;}
+
+        /*preparation in a:link styles*/
+        .falsebutton.active a:link {color: inherit; background-color: transparent;}
+        .falsebutton.active a:visited {color: inherit; background-color: transparent;}
+        .falsebutton.active a:hover {color: inherit; background-color: transparent;}
+
+        .falsebutton.withcontent a:link {color: inherit; background-color: transparent;}
+        .falsebutton.withcontent a:visited {color: inherit; background-color: transparent;}
+        .falsebutton.withcontent a:hover {color: inherit; background-color: transparent;}
+
+        .falsebutton:hover a:link {color: inherit; background-color: transparent;}
+        .falsebutton:hover a:visited {color: inherit; background-color: transparent;}
+        .falsebutton:hover a:hover {color: inherit; background-color: transparent;}
+
+        /*Adds background to buttons on hover*/
+        /*falsebuttons, falsebuttons.withcontent*/
+
+        .DropdownNavbar.HD .dropdown .falsebutton:hover,
+        .DropdownNavbar.HD .dropdown:hover {
+          color: #ffffff;
+          background-color: #000000;
+          background: url("Images/HD_barra.png");
+        }
+
+        .DropdownNavbar.HD .dropdown:hover .falsebutton.withcontent {
+            color: #ffffff;
+            background: url("Images/HD_barra.png");
+            box-shadow: -2px 20px 48px -10px rgba(0,0,0,0.1);
+        }
+
+                /*//////////////////////////////*/
+                    @media screen
+                    and (max-width: 800px) {
+                        .DropdownNavbar.HD .dropdown .falsebutton:hover,
+                        .DropdownNavbar.HD .dropdown:hover,
+                        .DropdownNavbar.HD .dropdown:hover .falsebutton.withcontent {
+                            color: #000000;
+                            background: none;
+                            box-shadow: none;
+                        }
+                    }
+                /*////////////////////////////////*/
+
+        /*=Holds the background color of the falsebutton when the dropdown content is shown */
+
+        .DropdownNavbar.MAP .dropdown .falsebutton:hover,
+        .DropdownNavbar.MAP .dropdown .falsebutton.withcontent:hover,
+        .DropdownNavbar.MAP .dropdown:hover {
+          color: #ffffff;
+          background-color: #000000;
+        }
+
+        .dropdown.MAP:hover .falsebutton.withcontent {
+          background-color: #000000;
+          color: #ffffff;
+        }
+
+
+        /*=Keeps MAP links inert on hover*/
+        /*For buttons with .keepwhite class*/
+
+        /*=Holds text color in .keepwhite class*/
+        .DropdownNavbar.MAP .dropdown .falsebutton.keepwhite.MAP:hover,
+        .DropdownNavbar.MAP .dropdown .falsebutton .withcontent.keepwhite:hover
+        .DropdownNavbar.MAP .dropdown .keepwhite:hover {
+          background-color: transparent;/
+          color: #000000;
+        }
+
+        /*=Keeps white background in keepwhite buttons on hover*/
+        .dropdown.keepwhite.MAP:hover .falsebutton.withcontent .keepwhite {
+          background-color: ;/*#ffffff;*/
+          color: #000000;
+        }
+
+                /*///////////////////////////*/
+                /*Cancels background on hover*/
+                @media screen
+                and (max-width: 800px) {
+                    .DropdownNavbar.MAP .dropdown .falsebutton:hover,
+                    .DropdownNavbar.MAP .dropdown:hover,
+                    .DropdownNavbar.MAP .dropdown:hover .falsebutton.withcontent {
+                        color: #000000;
+                        background: none;
+                        box-shadow: none;
+                    }
+                }
+
+                /*Adds border to falsebutton.withcontent on hover*/
+                @media screen
+                and (max-width: 800px) {
+                    .DropdownNavbar.HD .dropdown .falsebutton.withcontent:hover,
+                    .DropdownNavbar.MAP .dropdown .falsebutton.withcontent:hover {
+                        border-top: 1px solid #999999;
+                        border-left: 1px solid #999999;
+                        border-right: 1px solid #999999;
+                        width: 100px;
+                    }
+                }
+
+                /*Hover on dropdown - no border, transparent background*/
+                @media screen
+                and (max-width: 800px) {
+                            .DropdownNavbar.MAP .dropdown:hover .falsebutton.withcontent {
+                                color: #999999;
+                                background-color: transparent;
+                                background: none;
+                                box-shadow: none;
+                                }
+                }
+                /*/////////////////////////////////*/
+
+
+        /*For shadows*/
+
+         /*=Adds dark shadow around white dropdown navbar on hover*/
+        .DropdownNavbar.HD .dropdown.HD:hover,
+        .DropdownNavbar.MAP .dropdown.MAP:hover {
+            box-shadow: -2px 10px 20px -5px rgba(0,0,0,1); /*0px 10px 38px -5px rgba(0,0,0,1);*/
+        }
+
+                /*//////////////////////////////*/
+                /*Hover on dropdown - no shaddow*/
+                @media screen
+                and (max-width: 800px) {
+                            .DropdownNavbar.HD .dropdown.HD:hover,
+                            .DropdownNavbar.MAP .dropdown.MAP:hover,
+                            .DropdownNavbar.HD .falsebutton.HD:hover,
+                            .DropdownNavbar.MAP .falsebutton.MAP:hover
+                            {box-shadow: none;}
+                }
+
+/* TO SHOW dropdown menu AS VERTICAL on hover */
+/*small screens*/
+                /*and styles: white transparent bg, WHITE hover*/
+                /*may be left out >
+                menus on dropbox-container will simply never show*/
+
+                @media screen and (max-width: 800px) {
+                    .DropdownNavbar.HD .dropdown:hover .dropdown-content.HD,
+                    .DropdownNavbar.MAP .dropdown:hover .dropdown-content.MAP
+                    {display: block;
+
+                    width: 130px;
+
+                    margin-top: -33px;
+                    margin-left: 0;
+
+                    /*background-color: #ffffff;*/
+                    background: rgba(255,255,255, 0.9);
+
+                    border-left: 1px solid #999999;
+                    border-right: 1px solid #999999;
+                    border-bottom: 1px solid #999999;
+                    }
+                }
+
+                /*Makes a border around the button
+                when the dropdown content is shown */
+                /*goes with a dropdown-content with the same borders*/
+                 @media screen and (max-width: 800px) {
+                    .dropdown-content:hover .falsebutton.withcontent.HD,
+                    .dropdown-content:hover .falsebutton.withcontent.MAP,
+                    .DropdownNavbar.HD .dropdown:hover .falsebutton.withcontent.HD,
+                    .DropdownNavbar.MAP .dropdown:hover .falsebutton.withcontent.MAP {
+                        width: 100px;
+
+                        /*background-color: #ffffff;*/
+                        border-top: 1px solid #999999;
+                        border-right: 1px solid #999999;
+                        border-left: 1px solid #999999;
+                        }
+                 }
+
+                /*////////////////////////////////////*/
+                /*Turns right arrow into down arrow*/
+                 @media screen and (max-width: 800px) {
+                           .falsebutton.withcontent.HD .right,
+                           .falsebutton.withcontent.MAP .right {
+                               transform: rotate(45deg);
+                               -webkit-transform: rotate(45deg);
+                               }
+                        }
+
+                 /*/////////////////////////////////*/
+
+
+                 /*Last resort measure...
+                 to make dropdown content work on small screens,
+                 on the MAP menu*/
+                /*/////////////////////////////////*/
+                @media screen
+                and (max-width: 800px) {
+                    .milk {
+                        color: #000000 !important;
+                        background: rgba(255,255,255, 0.7) !important;
+                       /* background-color: transparent !important;*/
+                        }
+                }
+                @media screen
+                and (max-width: 800px) {
+                    .milk a:hover {
+                        background: rgba(255,255,255, 1) !important;
+                       /* background-color: transparent !important;*/
+                        }
+                }
+
+
+
+        /*BUG!*/
+        /* Remove extra black hover color in falsebutton link, HD and HD/MAP pages  */
+        .falsebutton a:hover,
+        .falsebutton.withcontent a:hover {
+          background-color: transparent;
+        }
+
+
+
+
+
+
+/*DropdownNavbar* END============================================================================*/
+/*=============================================================================================*/
+
+
+/*Main*******************************************************************************************************/
+
+#Main {
+    position: relative;
+    float: none;
+    clear: none;
+
+    width: 100%;
+
+    padding-top: 4vw; /*2em;*/
+    padding-left: 2em;/*7vw; 2em;*/
+    padding-bottom: 4vw; /*2em;*/
+
+    font-family: EB Garamond, 'Book Antiqua', Georgia, Serif;
+    }
+
+        /*//////////////////////////////////*/
+        @media screen and (max-width: 800px) {
+            #Main {
+                padding-top: 2vw; /*2em;*/
+                padding-left: 2vw; /*2em;*/
+                padding-bottom: 2vw; /*2em;*/
+                }
+        }
+        /*//////////////////////////////////*/
+
+/*#Main classes*********************************************************************/
+
+/*Classes to alter the background*/
+/*To change only background colors use
+ *.fullwhite, . fullblack, .transp below*/
+
+        /*HD background*/
+        #Main.HD {
+            background-image: url("Images/HD_fundo_cinza.png");
+            background-attachment: fixed;
+            background-repeat: repeat-x;
+            background-color: #333333;
+            }
+
+        /*MAP background*/
+        #Main.MAP {
+            background-image: url("Images/FL_010.png");
+            background-repeat: repeat-y;
+            background-attachment: fixed;
+            background-color: #000000;
+            }
+
+                /*//////////////////////////////////////////*/
+                /*To change background picture for MAP main*/
+                    @media screen
+                    and (max-width: 800px) {
+                       #Main.MAP,
+                       #Main.MAP.WithHiddenMenu
+                       {background-image: url("Images/MAP_fundo.png");}
+                   }
+                /*//////////////////////////////////////////*/
+
+
+/*Classes to alter the float propreties*/
+
+        /*for pages with a sidebar*/
+        #Main.Float {
+            overflow: hidden;
+            position: relative;
+            float: none;
+            clear: none;
+            }
+/*To alter width and padding*/
+/*May be used withour MainEntry*/
+
+       #Main.fullwidth {
+            width: 97vw;
+            padding-top: 0;
+            padding-right: 0;
+            padding-bottom: 3vw;
+            padding-left: 0;
+            }
+
+        /*///////////////////////////*/
+        @media screen
+        and (max-width: 800px) {
+        #Main.fullwidth  {
+             width: 90vw;
+            }
+        }
+        /*///////////////////////////*/
+
+/*Class to alter the top margin***********************/
+/*Go with hidden menu*/
+
+        /*This makes HiddenMenu hide and adjusts the inside of #Main*/
+        #Main.WithHiddenMenu {
+	position:relative;
+	z-index: auto;
+
+        margin-top: 250px;
+        padding-top: 80px;
+	}
+
+        /*/////////////////////////////*/
+        /*This makes Hidden manu always show*/
+        @media screen
+        and (max-width: 800px) {
+
+                #Main.WithHiddenMenu,
+                #Main.WithHiddenMenu {
+                    margin-top: 50px;
+                    padding-top: 300px;
+                }
+
+            }
+        @media screen
+        and (max-width: 650px) {
+
+                #Main.WithHiddenMenu,
+                #Main.WithHiddenMenu {
+                    margin-top: 50px;
+                    padding-top: 175px;
+                }
+
+            }
+        /*/////////////////////////////*/
+
+
+
+/*#Main children***********************************************************************/
+
+        /*#Sidebar floats to the left; its sister #Entry must be class .MainEntry-Float*/
+        /*#Sidebar is predicted as transparent; background styles must be classes*/
+        /*#Sidebar floats and is predicted for one #Entry on the left only*/
+
+        #Sidebar {
+            float: left;
+            position: relative;
+
+            width: 27vw;
+            }
+
+/*#Sidebar classes*******************************************************************/
+/*for SidebarWidget with HD.br tagcloud see below: .tagcloud*/
+
+        .SidebarWidget {
+                padding: 0em 0em 0em 0em;
+                }
+
+
+                /*///////////////////////////////////////*/
+                /*TO MAKE #Sidebar float below the Entry*/
+                /*(to hide sidebar widget with the tagcloud, just put {display: none})*/
+
+                    @media screen and (max-width: 800px) {
+                        #Sidebar {width: 85vw;}
+                        }
+
+                     /*TO MAKE .SidebarWidget fit in the wider #Sidebar*/
+                     /*(to make .tagcloud fonts in.SidebarWidget smaller see below, .tagcloud)*/
+                    @media screen and (max-width: 800px) {
+                        .SidebarWidget {
+                            padding-top: 4vw;
+                            padding-right: 0vw;
+                            padding-bottom: 3vw;
+                            padding-left: 1vw;
+                            }
+                        }
+                 /*///////////////////////////////////////*/
+
+/*#Entry*******************************************************************/
+
+        /*#Entry_1 and #Entry_2
+         *do not float
+        (i.e. they follow vertically);
+        if necessary Entry_3 etc can be added*/
+
+        #Entry_1 {
+            /*padding-top: 3vw;
+            padding-right: 5vw;
+            padding-bottom: 3vw;
+            padding-left: 5vw;
+
+            border: 1px solid #cccccc;*/
+         }
+
+        #Entry_2 {
+         /*border: 1px solid #cccccc;*/
+         }
+
+
+/*#Entry classes*******************************************************************/
+
+        /*Size, borders, paddings; default background*/
+        .MainEntry {
+
+            /*margin-top: 10px;*/
+
+            padding-top: 3vw;
+            padding-right: 5vw;
+            padding-bottom: 3vw;
+            padding-left: 5vw;
+
+            width: 50vw;
+
+            background-color: #ffffff;
+            background: rgba(255,255,255, 0.9);
+            border: 1px solid #cccccc;
+        }
+
+            /*//////////////////////////////////*/
+            @media screen and (max-width: 800px) {
+            .MainEntry {
+                    width: 85vw;
+                    padding-top: 1.5vw;
+                    padding-right: 4vw;
+                    padding-bottom: 3vw;
+                    padding-left: 3vw;
+                    }
+            }
+            /*//////////////////////////////////*/
+
+        /*Background classes*/
+        /*Also used in #Main*/
+
+        /*Opacque white background*/
+        .fullwhite {
+            background-color: #ffffff;
+            background: rgba(255,255,255, 1);
+            background-image: none; /*important for #Main*/
+             }
+
+        /*Black background*/
+        .fullblack {
+            background-color: #000000;
+            background: rgba(0,0,0, 1);
+            background-image: none; /*important for #Main*/
+             }
+
+        /*Strip off background, borders and paddings*/
+        .transp {
+             background: none;
+             background-color: transparent;
+             background-image: none; /*important for #Main*/
+
+             border: 1px solid transparent;
+             }
+
+        #Main.transp {
+            border-bottom: 1px solid #333333;
+             }
+
+        .fullwidth {
+            width: 88vw;
+            padding-top: 0;
+            padding-right: 0;
+            padding-bottom: 3vw;
+            padding-left: 0;
+            }
+
+
+        /*Google maps div style, for the page with the MAP google embed*/
+        .googlemaps {
+            text-align: left;
+            margin-left: 0em;
+        }
+
+
+/*Control floating*******************************/
+
+
+        /*MainEntry when there is a floating #Sidebar*/
+        .MainEntry.Float {
+             float: left;
+             position: relative;
+             clear: both;
+
+             padding: 4vw 4vw 4vw 4vw; /*6.5em 3em 6.5em 3em;*/ /*for very little content*/
+             margin-right: 1.5em;
+
+             width: 50vw;
+
+             /*background-color: #ffffff;
+             background: rgba(255,255,255, 1);
+             border: 1px solid #cccccc;*/
+
+             }
+
+            /*//////////////////////////////*/
+            /*TO MAKE MainEntry-Float WIDER*/
+            @media screen and (max-width: 800px) {
+                .MainEntry.Float
+                {width: 80vw;}
+            }
+            /*//////////////////////////////*/
+
+
+        /*MainEntry floating left*/
+        /*.Main.Float*/
+        .MainEntry.FloatLeft {
+             float: left;
+             position: relative;
+             clear: none;
+
+             padding: 0; /*6.5em 3em 6.5em 3em;*/ /*for very little content*/
+             margin-right: 1.5rem;
+
+             width: 30vw;
+             height: 280px;
+
+             background-color: transparent;
+             background-image: url("Images/MAP_tabela.png");
+             }
+
+        /*MainEntry floating right*/
+        /*.Main.Float*/
+        .MainEntry.FloatRight {
+             float: left;
+             position: relative;
+             clear: none;
+
+             padding: 0; /*6.5em 3em 6.5em 3em;*/ /*for very little content*/
+             margin-left: 3rem;
+             margin-right: 1.5em;
+
+             width: 30vw;
+
+             color: rgb(210,210,210);
+
+             background-color: transparent;
+             border: none;
+
+             /*background: rgba(255,255,255, 1);*/
+             /*border: 1px solid #cccccc;*/
+             }
+
+
+            /*////////////////////////////////////*/
+            @media screen
+            and (max-width: 800px) {
+               /*.Main.Float*/
+               .MainEntry.FloatLeft {
+                float: none;
+                width: 80vw;
+                height: 210px;
+                margin-left: 7vw;
+                margin-bottom: 10px;
+
+                }
+            }
+
+            @media screen
+            and (max-width: 800px) {
+               /*.Main.Float*/
+               .MainEntry.FloatRight {
+                float: none;
+                width: 80vw;
+
+                margin-left: 7vw;
+                margin-top: 25px;}
+           }
+           /*////////////////////////////////////*/
+
+        /*p in MainEntry floating right*/
+        /*.Main.Float*/ .MainEntry.FloatRight p {
+            color: rgb(190,190,190);
+            }
+
+/*MainEntry elements*******************************************************************/
+
+            .MainEntry h1 {
+                 color: #666666;
+                 text-align: left;
+            }
+
+            .MainEntry h2 {
+                 color: #666666;
+                 text-align: left;
+            }
+
+            .MainEntry h3 {
+                 color: #666666;
+                 text-align: left;
+            }
+
+            .MainEntry p {
+                 color: #000000;
+                 text-align: justify;
+            }
+
+            .MainEntry li {
+                 color: #000000;
+                 text-align: justify;
+                 padding-bottom: 0.75em;
+            }
+
+            .MainEntry a:hover, .MainEntry-Float a:hover {
+             color: #ff9900; text-decoration: none; background: #ffffff;
+            }
+
+            /*.MainEntry-MAP elements*******************************************************************/
+
+            .MainEntry.MAP h1 {
+                 padding-top: 0.6250em;
+                 /*font-size: 150%;*/ /*1.5em;*/
+                 }
+
+            .MainEntry.MAP h2 {
+                 color: #666666;
+                 text-align: left;
+                 padding-top: 1em;
+                 /*font-size: 125%;*/ /*1.25em;*/
+                 }
+
+            .MainEntry.MAP p {
+                 color: #000000;
+                 text-align: justify;
+                 }
+
+            .MainEntry.MAP a:hover {
+                 color: #ff9966;
+                 background: #ffffff;
+                 }
+
+            .MainEntry.MAP.noborder {
+                 margin-top: 4em;
+                 margin-bottom: 4em;
+                 margin-left: 4em;
+                 margin-right: 4em;
+                 width: 70vw;
+                 padding: 1em;
+                 }
+
+            .MainEntry.MAP.noborder h1 {
+                 padding-top: 0px;
+                 /*font-size: 300%;*/ /*3em;*/
+                 }
+
+            .MainEntry.MAP.noborder h2 {
+                 color: #666666;
+                 text-align: left;
+                 /*font-size: 125%*/ /*1.25em;*/
+                 }
+
+            .MainEntry.MAP.noborder p {
+                 color: #000000;
+                 text-align: justify;
+                 }
+
+            /*//////////////////////////////////////////*/
+            /*TO MAKE MainEntry p ALIGN LEFT*/
+            @media screen
+            and (max-width: 800px) {
+                .MainEntry p,
+                .MainEntry.MAP p {text-align: left;}
+            }
+            /*TO MAKE MainEntry li ALIGN LEFT; HD and MAP*/
+            @media screen
+            and (max-width: 800px) {
+                .MainEntry li,
+                .MainEntry.MAP li {text-align: left;}
+            }
+            /*////////////////////////////////////////////*/
+
+
+
+
+
+/*********************************************************************************************************/
+/*First level DIV: #Navbar-bottom******************************************************************************************/
+/*********************************************************************************************************/
+/*for long pages only*/
+
+#Navbar-bottom {
+    display: none; /*this Navbar is disabled at the moment!*/
+    background-color: #ffffff; /*was: transparent;*/
+    border-top: 1px solid #999999;
+    padding-left: 0;
+        }
+
+.Navbar-bottom {
+    display: none;} /*this Navbar is disabled at the moment!*/
+
+    /*Navbar-bottom classes: none*/
+
+    /*Navbar-bottom child***********************************************************/
+
+    .Navbar-bottom-wrap {
+     padding-left: 0;
+     text-align: left;
+     font-family: Verdana, Arial, Helvetica, sans-serif;
+     font-size: 90% /*0.9em;*/
+     }
+
+    /*Navbar-bottom-wrap styles*********************************************************/
+
+    .Navbar-bottom-wrap a {
+    display: inline-block;
+    }
+
+    .Navbar-bottom-wrap a:hover {
+    color: #000000;
+    }
+
+    .Navbar-bottom-wrap {
+     padding-left: 0.3125em;
+     text-align: left;
+     font-family: Verdana, Arial, Helvetica, sans-serif;
+     }
+
+    .Navbar-bottom-wrap a {
+    display: inline-block;
+    }
+
+    .Navbar-bottom-wrap a:hover {
+    color: #000000;
+    }
+
+/*********************************************************************************************************/
+/*First level DIV: #Footer**************************************************************************************************/
+/*********************************************************************************************************/
+
+#Footer {
+ position: relative;
+ float: left;
+ clear: both;
+ width: 100%; height: auto;
+
+ background-color: #000000;
+ margin: 0; padding: 0;
+ font-family: Verdana, 'Arial', Sans-serif;
+ color: #ffffff;
+ font-size: 75%; /*0.75em;*/
+}
+
+    /*#Footer classes: none*/
+
+    /*#Footer children**************************************************************/
+
+    #footer_1 {
+     float: left;
+     width: 50%;
+     height: 100%;
+     padding-left: 1em;
+     padding-top: 0.6250em;
+    }
+
+    #footer_2 {
+     float: right;
+     height: 100%;
+     padding-right: 1em;
+     padding-top: 0.6250em;
+    }
+
+    /*#Footer children classes**************************************************************/
+
+    .footer_left {
+     color: #ffffff;
+     text-align: left;
+     background-color: #000000;
+    }
+
+    .footer_right {
+     color: #ffffff;
+     text-align: right;
+     background-color: #000000;
+    }
+
+    /*.footer_1 and .footer_2 styles*/
+
+    #footer_1 a:link, #footer_2 a:link {
+     color: #cccccc; text-decoration: none;
+    }
+
+    #footer_1 a:visited, #footer_2  a:visited {
+     color: #cccccc; text-decoration: none;
+    }
+
+    #footer_1 a:hover, #footer_2 a:hover {
+     color: #ff9900; text-decoration: none; background: transparent;
+    }
+
+    /*/////////////////////////////////////////////////*/
+    /*SMALL SCREENS*/
+
+    /*TO MAKE Footers preserve floating (smaller fonts)*/
+
+
+                @media screen and (max-width: 800px) {
+                .footer_left {font-size: 90%;}
+                .footer_right {font-size: 90%;}
+                }
+    /*/////////////////////////////////////////////////*/
+
+
+/*/
+/*********************************************************************************************************/
+/*Elements in varied DIVs - styles ************************************************************************************************/
+/*********************************************************************************************************/
+
+/*********************************************************************************************************/
+/*UL menu styles************************************************************************************************/
+
+/*ul menu******************************************************************************************************/
+
+    ul.menu {
+     margin: 0;
+     padding: 0;
+    }
+
+    ul.menu li {
+     margin: 0;
+     padding: 0;
+     padding-left: 0px;
+     display: inline;
+     text-transform: uppercase;
+     font-size: 80%; /*0.80em;*/
+    }
+
+    ul.menu li.current {
+     font-weight: bold;
+    }
+
+    ul.menu a {
+     font-size: 80%; /*0.80em;*/
+     text-transform: uppercase;
+     text-decoration: none;
+      padding-top: 0.6250em;
+      padding-bottom: 0.6250em;
+      padding-left: 0.6250em;
+      padding-right: 0.6250em;
+    }
+
+    ul.menu a:hover {
+        background-color: #666666;
+        color: #ffffff;
+    }
+
+
+/*ul menu-inEntry***********************************************************************************************/
+
+    ul.menu-inEntry
+    {
+     margin-top: 10px;
+     margin-right: 0px;
+     margin-bottom: 10px;
+
+     padding: 10px;
+
+
+     box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.7);
+    }
+
+    ul.menu-inEntry .ListHeading {
+    padding-top: 10px;
+    padding-left: 1px;
+     display: inline;
+     text-transform: uppercase;
+     font-family: Verdana, Arial, sans-serif;
+     font-size: 70%;
+    }
+
+    .menu-inEntry-box {
+     margin-top: -25px;
+     margin-left: 70px;
+    }
+
+    ul.menu-inEntry li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+     margin: 0;
+     display: block;
+     text-transform: uppercase;
+     font-family: Verdana, Arial, sans-serif;
+     font-size: 70%; /*0.80em;*/
+     border: 1px solid transparent;
+    }
+
+    ul.menu-inEntry a:link,
+    ul.menu-inEntry a:visited {
+      text-decoration: none;
+      color: #666666;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    ul.menu-inEntry a:hover {
+        background-color: transparent;
+        color: #000000;
+    }
+
+    ul.menu-inEntry li:hover {
+        background-color: #ffffff;
+        color: #000000;
+        border: 1px solid #999999;
+
+        background: rgba(255,255,255, 0.7); /*transparent, to overlay white bgs*/
+        box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+    }
+
+
+/*ul menu-simple***********************************************************************************************/
+
+    ul.menu-simple {
+     margin: 0;
+     padding: 0;
+    }
+
+    ul.menu-simple li {
+    padding-left: 0;
+     padding-right: 0;
+     display: inline;
+     text-transform: uppercase;
+     font-size: 75%; /*0.75em;*/
+     color: #333333;
+    }
+
+    ul.menu-simple li.current {
+     font-weight: bold;
+    }
+
+    ul.menu-simple a {
+
+     text-transform: uppercase;
+     text-decoration: none;
+      padding-top: 1.5em;
+      padding-bottom: 1.5em;
+      padding-left: 0.6250em;
+      padding-right: 0.6250em;
+      border-top: 1px solid transparent;
+      border-left: 1px solid transparent;
+      border-right: 1px solid transparent;
+      color: #000000;
+    }
+
+    ul.menu-simple a:hover {
+        background-color: #000000;
+        color: #ffffff;
+        border-top: 1px solid #666666;
+        border-left: 1px solid #666666;
+        border-right: 1px solid #666666;
+    }
+
+/*ul menu-MAP*************************************************************************************************/
+
+    ul.menu-MAP {
+     margin: 0;
+     padding: 0;
+    }
+
+    ul.menu-MAP li {
+     margin: 0;
+     display: inline;
+     text-transform: uppercase;
+     font-size: 70%; /*0.70em;*/
+     color: #333333;
+    }
+
+    ul.menu-MAP notLink {
+     margin: 0;
+     padding-left: 2em;
+     padding-right: 1em;
+     padding-bottom: 1em;
+     padding-top: 1em;
+     display: inline;
+     text-transform: uppercase;
+     font-size: 70%; /*0.70em;*/
+     color: #333333;
+    }
+
+    ul.menu-MAP li.current {
+     font-weight: bold;
+    }
+
+    ul.menu-MAP a {
+     margin: 0;
+     text-transform: uppercase;
+     text-decoration: none;
+     padding-left: 1em;
+     padding-right: 1em;
+     padding-bottom: 1em;
+     padding-top: 1em;
+    }
+
+    ul.menu-MAP a:hover {
+        background-color: #ffffff;
+        color:  #ff9900;
+    }
+
+
+/*ul menu-simple-toppest****************************************************************************************/
+
+    ul.menu-simple-toppest {
+     margin: 0;
+     padding: 0;
+    }
+
+    ul.menu-simple-toppest li {
+    padding-left: 0em;
+     padding-right: 0em;
+     display: inline;
+     text-transform: uppercase;
+     font-size: 70%; /*0.70em;*/
+     color: #ffffff;
+    }
+
+    ul.menu-simple-toppest li.current {
+     font-weight: bold;
+    }
+
+    ul.menu-simple-toppest a {
+     color: #ffffff;
+     font-size: 80%; /*0.80em;*/
+     text-transform: uppercase;
+     text-decoration: none;
+      padding-top: 0.9375em;
+      padding-bottom: 0.9375em;
+      padding-left: 0.6250em;
+      padding-right: 0.6250em;
+      border-bottom: 1px solid transparent;
+      border-left: 1px solid transparent;
+      border-right: 1px solid transparent;
+    }
+
+    ul.menu-simple-toppest a:hover {
+        background-color: #ffffff;
+        /*background: rgba(0, 0, 0, 0.7); /*transparency in bg color*/
+        color: #000000;
+        border-bottom: 1px solid #ffffff;
+        border-left: 1px solid #666666;
+        border-right: 1px solid #666666;
+    }
+
+/*/
+/*********************************************************************************************************/
+/*Extra Dropdown menu styles*****************************************************************************************/
+/*********************************************************************************************************/
+
+/*Used only in HD/MAP/MAP_Recursos.html*/
+
+        /*When DropdownNavbar-inEntry goes inside Entry, inside the TableDropdown table*/
+
+            .TableDropdown {
+            background-color: transparent;
+                    border: 0;
+                    margin-top: 1vw;
+                    margin-left: 10vw;
+                    padding: 0;
+                    width: 50vw; height: 300px;
+                    }
+            .TableDropdown td {
+                text-align: left;
+                width: auto; height: auto;
+                padding: 0;
+                vertical-align: top;
+                background-image: url("Images/MAP_tabela.png");
+                }
+
+/*When DropdownNavbar-inEntry goes inside entry, but no table*/
+
+/* The dropdown container *************************************************************************/
+    /* DropdownNavbar-inEntry container*/
+    .DropdownNavbar-inEntry {
+      overflow: hidden;
+
+      width: inherit;
+
+      font-family: Verdana, Arial, Helvetica, sans-serif;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      background-color: #ffffff;
+      background:rgba(255,255,255, 0.5); /*semi-transparent white*/
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+      }
+
+    /* Links inside the navbar */
+    .DropdownNavbar-inEntry a {
+      float: center;
+      color: inherit;
+      text-align: left;
+      /*padding: 5px 10px;*/
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 0.3125em;
+      padding-right: 0.3125em;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 75%; /*0.75em;*/
+    }
+
+    .dropdown-inEntry {
+      float: left;
+      overflow: hidden;
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+
+      width: inherit;
+    }
+
+    /* Dropdown link with no button */
+    .dropdown-inEntry .falsebutton-inEntry {
+      border: none;
+      outline: none;
+      /*color: inherit;*/
+      text-align: left;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 0.6250em;
+      padding-right: 0.6250em;
+      font-family: inherit; /* Important for vertical align on mobile phones */
+      margin: 0; /* Important for vertical align on mobile phones */
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 90%; /*0.9em;*/
+      height: auto;
+
+    }
+
+    /* falsebutton-inEntry width */
+    .falsebutton-inEntry {
+      width: 50vw; /*650px;*/ /*same width as TableDropdown*/
+    }
+
+
+    /* Add background color to navbar links on hover */
+    .DropdownNavbar-inEntry .falsebutton-inEntry:hover, a:hover,
+    .dropdown-inEntry:hover  {
+      background-color: #ffffff;
+      background: rgba(250, 250, 250, 0.7); /*less transparency in bg color*/
+      color: #000000;
+    }
+
+    /* Remove hover color in falsebutton link */
+    .falsebutton-inEntry a:hover {
+      background-color: transparent;
+    }
+
+            /* Dropdown content (hidden by default) */
+            .dropdown-content-inEntry {
+              display: none;
+              position: absolute;
+              background-color: #ffffff;
+              background:rgba(255,255,255, 0.7);
+              width: inherit;
+              height: auto;
+              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+              z-index: 1;
+            }
+
+            /* Links inside the dropdown */
+            .dropdown-content-inEntry a,
+            .dropdown-content-white-inEntry a {
+              float: none;
+              color: black;
+              padding-top: 20px;
+              padding-bottom: 20px;
+              padding-left: 0.6250em;
+              padding-right: 0.3125em;
+              text-decoration: none;
+              display: block;
+              text-align: left;
+              font-size: 70%; /*0.7em;*/
+            }
+
+            /* Add a grey background color to dropdown links on hover */
+            .dropdown-content-inEntry a:hover {
+              background-color: #999999;
+              color: #ffffff;
+              background: rgba(0, 0, 0, 0.5); /*transparency in bg color*/
+            }
+
+            /* Show the dropdown menu on hover */
+            .dropdown-inEntry:hover .dropdown-content-inEntry  {
+              display: block;
+            }
+
+            .dropdown-inEntry:hover .dropdown-content-white-inEntry  {
+              display: block;
+            }
+
+            /* Hide the link that should open and close the topnav on small screens */
+            .topnav .icon {
+                display: none;
+            }
+
+
+        /*/////////////////////////////////////////////////*/
+        /*SMALL SCREENS*/
+        /*Adaptations for DropdownNavbar-inEntry*/
+
+        /*TO MAKE TableDropdownNavbar SMALLER*/
+        @media screen and (max-width: 800px) {
+                        .TableDropdown
+                        {width: 80vw; height: 200px; margin-left: 2vw;}
+                        }
+
+        /*styles*/
+        @media screen and (max-width: 800px) {
+                    .DropdownNavbar-inEntry {
+                      font-family: Verdana, Arial, Helvetica, sans-serif;
+                      margin: 0;
+                      padding-top: 5vw;
+                      padding-bottom: 5vh;
+                      background-color: #ffffff;
+                      background:rgba(255,255,255, 0.3);
+                      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+                      width: 80vw;
+                      height: 160px;
+                      vertical-align: middle;
+                      }
+        }
+
+        /*TO HIDE falsebutton*/
+        @media screen and (max-width: 800px) {
+                    .falsebutton-inEntry {display: none;}
+        }
+
+        /*styles*/
+        @media screen and (max-width: 800px) {
+            .DropdownNavbar-inEntry a {
+                      display: block;
+                      color: inherit;
+                      padding-top: 20px;
+                      padding-bottom: 20px;
+                      padding-left: 0.3125em;
+                      padding-right: 0.3125em;
+                      text-decoration: none;
+                      text-transform: uppercase;
+                      font-size: 75%; /*0.75em;*/
+                    }
+        }
+
+        /*TO MAKE dropdown-content always visible*/
+        @media screen and (max-width: 800px) {
+            .dropdown-content-inEntry {
+              display: block;
+              width: 80vw;
+              /*height: auto;*/
+              z-index: 1;
+              background-color: #ffffff;
+              background:rgba(255,255,255, 0.3);
+              margin-top: -20px;
+            }
+        }
+        /*/////////////////////////////////////////////////*/
+
+
+
+/*/
+/*********************************************************************************************************/
+/*Table hover and number styles - for MAP_catalog.html**************************************************/
+/*********************************************************************************************************/
+
+    .CatalogTable tr:hover:not(:first-child) {
+        background-color:#ffeecc; /*#e6f2ff */
+    }
+
+    .CatalogTable {
+        counter-reset: rowNumber;
+        font-family: EB Garamond, Georgia, Serif;
+        font-size: 1rem; /*.950em;*/
+        text-align: left;
+        border: 1px solid #cccccc;
+        border-collapse: collapse;
+        width: 95vw;
+        margin-left: 1vw;
+    }
+
+        /*///////////////////////////*/
+        @media screen
+        and (max-width: 800px) {
+        .CatalogTable {
+            font-size: 0.90rem;
+            width: 90vw;
+            }
+        }
+        @media screen
+        and (max-width: 650px) {
+        .CatalogTable {
+            font-size: 0.85rem;
+            width: 85vw;
+            }
+        }
+        /*///////////////////////////*/
+
+    .CatalogTable td {
+        text-align: left;
+    }
+
+    .CatalogTable tr:not(:first-child) {
+        counter-increment: rowNumber;
+    }
+
+    .CatalogTable tr td:first-child::before {
+        content: counter(rowNumber);
+        min-width: 1em;
+        margin-right: 0.5em;
+    }
+
+    .CatalogTable a:hover {
+         color: #99cccc; /*#ff9966;*/
+         background: transparent;
+    }
+
+.CatalogDiv {
+    width: 85vw;
+    padding: 2em;
+    }
+
+
+/*/
+/*********************************************************************************************************/
+/*Menu down and left arrow, triangle and circle*****************************************************************/
+/*********************************************************************************************************/
+
+
+/*CLOSE*/
+
+.close {
+  position: relative;
+  color: #000000;
+  opacity: 0.2;
+}
+.close:hover {
+  color: #000000;
+  opacity: 1;
+}
+
+.close:before, .close:after {
+  position: absolute;
+  top: 2px;
+  left: 130px;
+  content: ' ';
+  height: 10px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+
+/*triangle*/
+
+#down-triangle {
+	float: left;
+	width: 0;
+ 	height: 0;
+ 	margin-top: 8px;
+        margin-right: 0.6250em;
+ 	border-top: 10px solid #666666;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+}
+
+#down-triangle:hover {
+	float: left;
+	width: 0;
+ 	height: 0;
+ 	margin-top: 8px;
+        margin-right: 0.6250em;
+ 	border-top: 10px solid transparent; /*triangle 'disappears' on hover*/
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+}
+
+/*down arrow, right arrow*/
+
+    i {
+        border: solid #666666; /*arrow is hidden; activate color #cccccc for arrow*/
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+    }
+
+    i:hover {
+        border: solid #cccccc; /*arrow is hidden; activate hover #ffffff for arrow*/
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+    }
+
+    /*right arrow*/
+    .right {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+
+    /*left arrow*/
+
+    .left {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+        }
+
+    /*down arrow*/
+    .down {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+
+    /*up arrow*/
+    .up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+/*circle*/
+
+    .circle {
+            float: left;
+            display: inline;
+            width: 0.6250em;
+            height: 0.6250em;
+            margin-top: 1px;
+            margin-right: 0.6em;
+            border: 3px solid #ffffff;
+            -moz-border-radius: 100%;
+            -webkit-border-radius: 100%;
+            border-radius: 100%;
+    }
+
+    .circle:hover {
+            float: left;
+            display: inline;
+            width: 0.6250em;
+            height: 0.6250em;
+            margin-top: 1px;
+            margin-right: 0.6em;
+            border: 3px solid #ffffff;
+            background-color: #ffffff;
+            -moz-border-radius: 100%;
+            -webkit-border-radius: 100%;
+            border-radius: 100%;
+    }
+
+    /*//////////////////////////////////////////*/
+    /*TO MAKE circle FIT INTO NAVBAR SMALL SCREENS*/
+
+    @media screen
+    and (max-width: 800px) {
+        .circle {
+            margin-top: 1px;
+            margin-right: 0.4em;
+            border: 2px solid #ffffff;
+            }
+        }
+
+    @media screen
+    and (max-width: 800px) {
+        .circle:hover {
+            margin-top: 1px;
+            margin-right: 0.4em;
+            border: 2px solid #ffffff;
+            background-color: #ffffff;
+            }
+        }
+    /*//////////////////////////////////////////*/
+
+
+/*/
+/*********************************************************************************************************/
+/*tagcloud sidebar widget styles and tagcloud link styles*/
+/*********************************************************************************************************/
+
+/*OBS 1 insert #sidebar inside #Main with class .Main-Float*/
+/*OBS 2 #main_1 to go with #sidebar must be class .MainEntry-Float*/
+
+    /*sidebar widget styles*/
+
+    .widget-title {
+        font-family: Verdana;
+        font-size: 75%; /*0.750em;*/
+        text-align: center;
+        }
+
+    /*for tagcloud in Sidebar*/
+    #Sidebar .tagcloud {
+        padding-top: 0;
+        text-align: left;
+        line-height: 0.8;
+        }
+
+    /*for tagcloud in MainEntry*/
+    .MainEntry .tagcloud {
+        padding-top: 0;
+        text-align: justify;
+        line-height: 0.7;
+        }
+
+    /*ul is not active in html*/
+    .tagcloud ul {
+        padding: 0.5em 0.5em 0.5em 0.5em;
+        }
+
+    .tagcloud li {
+        display: inline;
+    }
+
+    /*for tagcloud in Sidebar*/
+    #Sidebar .tagcloud .adjustFont {
+        font-size: 90%;
+    }
+
+    /*for tagclouds in MainEntry*/
+    .MainEntry .tagcloud .adjustFont {
+        font-size: 150%;
+    }
+
+/*Make link colors dependent on font-size; shades of gray*/
+
+    .tagcloud .peso1:link   {color: rgb(90,90,90);}
+    .tagcloud .peso2:link   {color: rgb(100,100,100);}
+    .tagcloud .peso3:link   {color: rgb(110,110,110);}
+    .tagcloud .peso4:link   {color: rgb(120,120,120);}
+    .tagcloud .peso5:link   {color: rgb(130,130,130); }
+    .tagcloud .peso6:link   {color: rgb(140, 140,140);}
+    .tagcloud .peso7:link   {color: rgb(150, 150,150);}
+    .tagcloud .peso8:link   {color: rgb(160,160,160);}
+    .tagcloud .peso9:link   {color: rgb(170,170,170);}
+    .tagcloud .peso10:link  {color: rgb(180,180,180);}
+    .tagcloud .peso11:link  {color: rgb(190,190,190);}
+    .tagcloud .peso12:link  {color: rgb(200,200,200);}
+    .tagcloud .peso13:link  {color: rgb(210,210,210);}
+    .tagcloud .peso14:link  {color: rgb(220,220,220)}
+    .tagcloud .peso15:link  {color: rgb(230,230,230);}
+    .tagcloud .peso16:link  {color: rgb(240,240,240);}
+
+    .tagcloud .peso1:visited   {color: rgb(90,90,90);}
+    .tagcloud .peso2:visited   {color: rgb(100,100,100);}
+    .tagcloud .peso3:visited   {color: rgb(110,110,110);}
+    .tagcloud .peso4:visited   {color: rgb(120,120,120);}
+    .tagcloud .peso5:visited   {color: rgb(130,130,130); }
+    .tagcloud .peso6:visited   {color: rgb(140, 140,140);}
+    .tagcloud .peso7:visited   {color: rgb(150, 150,150);}
+    .tagcloud .peso8:visited   {color: rgb(160,160,160);}
+    .tagcloud .peso9:visited   {color: rgb(170,170,170);}
+    .tagcloud .peso10:visited  {color: rgb(180,180,180);}
+    .tagcloud .peso11:visited  {color: rgb(190,190,190);}
+    .tagcloud .peso12:visited  {color: rgb(200,200,200);}
+    .tagcloud .peso13:visited  {color: rgb(210,210,210);}
+    .tagcloud .peso14:visited  {color: rgb(220,220,220)}
+    .tagcloud .peso15:visited  {color: rgb(230,230,230);}
+    .tagcloud .peso16:visited  {color: rgb(240,240,240);}
+
+
+    .tagcloud .peso1:hover,
+    .tagcloud .peso2:hover,
+    .tagcloud .peso3:hover,
+    .tagcloud .peso4:hover,
+    .tagcloud .peso5:hover,
+    .tagcloud .peso6:hover,
+    .tagcloud .peso7:hover,
+    .tagcloud .peso8:hover,
+    .tagcloud .peso9:hover,
+    .tagcloud .peso10:hover,
+    .tagcloud .peso11:hover,
+    .tagcloud .peso12:hover,
+    .tagcloud .peso13:hover,
+    .tagcloud .peso14:hover,
+    .tagcloud .peso15:hover,
+    .tagcloud .peso16:hover {color: #ffffff; background: transparent; }
+
+    /*Hide the HD.br Header*/
+    .tagcloud .adjustFontHeader  {display: none;}
+
+    /*TO display Header as dropcap activate this:*/
+    /*.tagcloud .adjustFontHeader  {
+        font-size: 150%;
+        float: left;
+        line-height: 60px;
+        padding-top: 10px;
+        padding-right: 20px;
+        padding-left: 0px;
+        padding-bottom: 0px;
+        }*/
+
+    /*Styles for the header when active*/
+    .tagcloud .tag-link-header a:visited {
+        color: #ffffff;
+    }
+    .tagcloud a:hover .adjustFontHeader  {
+        color: #999999;
+        }
+    .tagcloud a:link .adjustFontHeader {
+        color: #ffffff;
+        }
+    .tagcloud a:visited .adjustFontHeader {
+        color: #666666;
+        }
+
+        /*////////////////////////////////////////////*/
+        /*SMALL SCREENS*/
+        /*TO MAKE fonts smaller in the tagcloud*/
+        @media screen
+        and (max-width: 800px) {
+                #Sidebar .tagcloud {text-align: left; line-height: 3vh;}
+                .MainEntry .tagcloud {text-align: left; line-height: 2.5vh;}
+                #Sidebar .tagcloud .adjustFont {font-size: 70%;}
+                .MainEntry .tagcloud .adjustFont {font-size: 80%; padding-right: 5mm;}
+                }
+
+        /*TO HIDE smaller tagcloud items (must be labeled peso1, peso2, etc in the html*/
+         @media screen
+        and (max-width: 800px) {
+            .peso1,
+            .peso2,
+            #Sidebar .tagcloud .peso3
+            {display: none;}
+            }
+
+        /*TO display Header as dropcap activate this:*/
+        /*. @media screen
+        and (max-width: 700px) {
+                tagcloud .adjustFontHeader  {
+                        font-size: 80%;
+                        line-height: 25px;
+                        padding-top: 8px;
+                        padding-right: 10px;
+                        padding-left: 0px;
+                        padding-bottom: 0px;
+                        }
+        }*/
+
+        /*////////////////////////////////////////////*/
+
+
+
+
+/*/==================================================/*/
+/*/==================================================/*/
+/**/
+/*SPECIAL CATALOG STYLES: FOR FICHAS.html*/
+/**/
+/*/==================================================/*/
+/*/==================================================/*/
+
+
+
+/*/
+/*==================================================================*/
+/*STYLES FOR CATALOG FILES*=========================================*/
+/*==================================================================*/
+/*/
+
+/*DropdownNavbarLong Menu*/
+/*For catalog pages - menu with a very long drop-down*/
+/*stays on top of the page if used inside #FixedBlock above*/
+
+/*Current file: =Fichas.xsl -> _Fichas.htm*/
+
+/* Containers *************************************************************************/
+
+
+    /*Toggle hide dropdown-content********************/
+
+    /*To be used with js on html*/
+    /*also with HiddenMenu*/
+    /*Special arrow styles*/
+    /*i element to be shaped as arrows*/
+
+    .DropdownNavbar-long i,
+    .DropdownNavbar-hidden i
+    {
+        display: inline-block;
+
+        border: solid #666666;
+        border-width: 0 2px 2px 0;
+
+        padding: 3px;
+    }
+
+    .DropdownNavbar-long i:hover,
+    .DropdownNavbar-hidden i:hover {
+        display: inline-block;
+
+        border: solid #000000; /*arrow is hidden; activate hover #ffffff for arrow*/
+        border-width: 0 2px 2px 0;
+
+        padding: 3px;
+    }
+
+
+    /*right versus left*/
+    .right {visibility: visible; z-index: 5;}
+    .dropdown.long:hover .dropdown-content.long .right,
+    .dropdown.hidden:hover .dropdown-content.hidden .right
+    {visibility: hidden;}
+
+    .left
+    {visibility: hidden;}
+    .dropdown.long:hover .dropdown-content.long .left,
+    .dropdown.hidden:hover .dropdown-content.hidden .left
+    {visibility: visible; z-index: 5;}
+    .dropdown.long:hover .left,
+    .dropdown,hidden:hover .left
+    {visibility: visible; z-index: 5;}
+
+
+    /*separators*/
+    .false {visibility: hidden; width: 5px;}
+    .large {visibility: hidden; width: 40px;}
+
+
+    /*circle*/
+    .DropdownNavbar-long .circle {
+            float: left;
+            display: inline;
+            width: 0.6250em;
+            height: 0.6250em;
+            margin-top: 1px;
+            margin-right: 0.6em;
+            border: 3px solid #000000;
+            -moz-border-radius: 100%;
+            -webkit-border-radius: 100%;
+            border-radius: 100%;
+    }
+
+    .DropdownNavbar-long .circle:hover {
+            float: left;
+            display: inline;
+            width: 0.6250em;
+            height: 0.6250em;
+            margin-top: 1px;
+            margin-right: 0.6em;
+            border: 3px solid #000000;
+            background-color: #000000;
+            -moz-border-radius: 100%;
+            -webkit-border-radius: 100%;
+            border-radius: 100%;
+    }
+
+
+
+/*/==================================================/*/
+/*/
+CATALOG CONTAINERS
+/*====================================================*/
+
+/*#Ficha
+    #Ficha-header
+    #Ficha-wrap
+        #Ficha-1
+        #Ficha-2
+        #Ficha-3
+        #Ficha-4
+        #Ficha-5
+        #Ficha-6
+        #Ficha-7
+*/
+
+#Ficha {
+
+    position: relative;
+    overflow: visible;
+    padding-top: 5px;
+    padding-left: 10px; /*if ~40px less than DropDown-long, the menu fits to the left*/
+    padding-bottom: 10px;
+    width: 800px;
+    }
+
+    /*//////////////////////*/
+     @media screen
+     and (max-width: 800px) {
+        #Ficha {
+            width: 80vw;
+
+            padding:5px;
+            margin-top: 50px; /*Important only when FixedBlock is white*/
+            }
+        }
+
+      /*//////////////////////*/
+     @media screen
+     and (max-width: 800px) {
+        #Ficha {
+            padding:5px;
+            margin-top: 50px; /*Important only when FixedBlock is white*/
+            }
+        }
+     /*//////////////////////*/
+
+
+/*#Ficha elements*/
+/*Important only when FixedBlock is white*/
+
+    #Ficha h1 {margin-top: 80px;}
+
+
+    /*//////////////////////*/
+     @media screen
+     and (max-width: 800px) {
+    #Ficha h1 {margin-top: 100px;}
+    }
+     /*//////////////////////*/
+
+    /*#Ficha styles*/
+
+
+
+/*#Ficha children*/
+
+    #Ficha-header {
+        padding: 15px;
+        width: 800px;
+
+        background-color: transparent;
+        color: #ffffff;
+        font-size: 1.20em;
+        }
+
+        /*//////////////////////*/
+         @media screen
+         and (max-width: 800px) {
+            #Ficha-header {width: 80vw; padding: 10px;}
+            }
+        /*//////////////////////*/
+
+
+    #Ficha-wrap {
+        overflow: hidden;
+        position: relative;
+        float: none;
+        clear: none;
+
+        padding: 0px;
+        width: 800px;;
+
+        /*border: 1px solid #cccccc;*/
+        background: inherit;/*#ffffff;*/
+
+
+        }
+
+        /*//////////////////////*/
+         @media screen
+         and (max-width: 800px) {
+            #Ficha-wrap {width: 85vw; padding: 10px;}
+            }
+        /*//////////////////////*/
+
+
+/*#Ficha-wrap children*/
+
+        /*Imagem*/
+        #Ficha-1 {
+            position: relative;
+            float: left;
+            clear: none;
+
+            width: 440px;
+
+            padding-bottom: 10px;
+            }
+
+
+        /*Descri��o*/
+        #Ficha-2 {
+            position: relative;
+            float: left;
+            clear: none;
+
+            width: 330px;
+
+            padding-left: 20px;
+            margin-bottom: 10px;
+            }
+
+
+        /*Transcri��o*/
+        #Ficha-3 {
+            position: relative;
+            float: left;
+            clear: none;
+
+            width: 750px;
+
+            padding: 10px 20px 10px 20px;
+            margin: 5px;
+
+            border: 1px solid #999999;
+
+
+            }
+
+
+        /*Documentos prim�rios*/
+        #Ficha-4 {
+            position: relative;
+            float: left;
+            clear: none;
+
+
+            width: 750px;
+            /*min-height: 170px;*/
+
+            padding: 10px 20px 20px 20px;
+            margin: 5px;
+
+            border: 1px solid #999999;
+            }
+
+
+        /*Men��o na bibliografia*/
+        #Ficha-5 {
+            position: relative;
+            float: left;
+            clear: none;
+
+            width: 340px;
+            min-height: 495px;
+
+            padding: 10px 20px 10px 20px;
+            margin: 5px 10px 5px 5px;
+
+            border: 1px solid #999999;
+            }
+
+
+        /*Dados biogr�ficos*/
+        #Ficha-6 {
+            position: relative;
+            float: left;
+            clear: none;
+
+            width: 348px;
+            min-height: 230px;
+
+            padding: 10px 20px 10px 20px;
+            margin: 5px 5px 10px 5px;
+
+            border: 1px solid #999999;
+            }
+
+
+        /*Dados internos*/
+        #Ficha-7 {
+            position: relative;
+            float: left;
+            clear: none;
+
+            width: 348px;
+            min-height: 230px;
+
+            padding: 10px 20px 10px 20px;
+            margin: 5px;
+
+            border: 1px solid #999999;
+            }
+
+
+            /*/////////////////////////////////*/
+             @media screen and
+             (max-width: 800px) {
+                #Ficha-1,
+                #Ficha-2,
+                #Ficha-3,
+                #Ficha-4,
+                #Ficha-5,
+                #Ficha-6,
+                #Ficha-7 {
+                    float: none;
+
+                    width: 80vw;
+                    min-height: 10px;
+
+                    padding-top: 10px;
+                    padding-right: 10px;
+                    padding-bottom: 10px;
+                    padding-left: 10px;
+
+                    margin-top: 0px;
+                    margin-right: 0px;
+                    margin-bottom: 10px;
+                    margin-left: 0px;
+                    }
+                }
+                /*///////////////////////////*/
+
+
+
+/*#Ficha-1 to #Ficha-7 Classes*/
+
+        .Ficha-white {background: #ffffff; font-size: 1rem;}
+        .Ficha-white h2 {font-size: 1.3rem;}
+
+        .Ficha-transp {
+            background: transparent;
+            border: 1px solid transparent;
+            /*color: #cccccc;*/
+            font-size: 1.1em;
+            color: rgb(210,210,210);
+            }
+
+        .wraplink {
+            word-wrap: break-word;
+            }
+
+            /*Inside Ficha-1*/
+            .Ficha-image {width: 440px;}
+
+                /*//////////////////////*/
+                 @media screen
+                 and (max-width: 800px) {
+                    .Ficha-image {width: 75vw;}
+                    }
+                /*//////////////////////*/
+
+            .Legenda {
+                position: relative;
+                float: inherit;
+
+                background: transparent;
+                color: #999999;
+                font-size: 0.8rem;
+            }
+
+            .NoImage {
+                color: #999999;
+                text-align: center;
+
+                height: 100px;
+                width: 400px;
+
+                padding-top: 50px;
+                padding-bottom: 0px;
+                margin-left: 15px;
+
+                border: 1px solid #666666;
+            }
+                /*//////////////////////*/
+                 @media screen
+                 and (max-width: 800px) {
+                    .NoImage {
+                        height: 100px;
+                        width: 250px;
+                        margin-left: 0;
+                        }
+                    }
+                /*//////////////////////*/
+
+/*========================================================*/
+
+
+/*Simple links, in black background*/
+/*These links disappear in black background, for anchors*/
+
+    .simple:link {
+     color: #000000;
+     text-decoration: none;
+    }
+    .simple:active {
+     color: #000000;
+    }
+    .simple:visited {
+     color: #000000;
+     text-decoration: none;
+    }
+    .simple:hover {
+     color: #ffcccc;
+     text-decoration: none;
+     background: transparent;}
+
+    .simple {
+     color: #000000;
+     text-decoration: none;
+    }
+
+
+/*#ToTopLink classes*/
+/*i classes*/
+
+     .ToTopLink i {
+        display: inline-block;
+
+        border: solid #ffffff;
+        border-width: 0 2px 2px 0;
+
+        padding: 3px;
+        }
+
+    .ToTopLink i:hover {
+
+     border: solid #000000;
+     border-width: 0 2px 2px 0;
+
+     padding: 3px;
+     }
+
+
+    .ToTopLink {
+     position: fixed;
+     top: 0;
+     left: 0;
+     z-index: 4;
+     width: 80px;
+     height: 50px;
+     }
+
+
+    .ToTopLink a {
+          float: left;
+          text-align: left;
+
+          padding-top: 20px;
+          padding-bottom: 20px;
+          padding-left: 15px;
+          padding-right: 15px;
+
+          font-family: Verdana, Arial, Helvetica, sans-serif;
+          text-transform: uppercase;
+          font-size: 70%;
+          }
+
+
+    .ToTopLink a:hover {
+          text-decoration: none;
+          color: #000000;
+          background: #ffffff;
+          background: rgba(255,255,255,0.3); /*same as #FixedBlock*/
+          }
+
+
+
+/*/==================================================/*/
+/*/
+/*==================================================================*/
+/*STYLES FOR CATALOG FILES*END*=====================================*/
+/*==================================================================*/
+/*/
+
+
+
+
+
+/*****************************************************/
+/*GRID STYLES*****************************************/
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 20% 10% 25% 20% 25%;
+	grid-template-rows: 18vw 10vw 18vw auto auto auto;
+  grid-gap: 2px;
+
+ width: 99vw;
+ height: 46vw;
+
+  background-color:  transparent;
+  padding: 1px; /*2px;*/
+}
+
+        /*///////////////////////////////////*/
+        @media screen and (max-width: 1024px) {
+
+        .grid-container {
+         grid-template-columns: 25% 25% 25% 25% 0px 0px;
+         grid-template-rows: 13vw 10vw 10vw 0vw 0vw 0vw;
+         width: 99vw;
+         height: 33vw;
+         padding: 1px;}
+        }
+        @media screen and (max-width: 650px) {
+
+        .grid-container {
+         grid-template-columns: 25% 25% 25% 25% 0px 0px;
+         grid-template-rows: 33vw 33vw 30vw 0vw 0vw 0vw;
+         width: 99vw;
+         height: auto;
+         padding: 1px;}
+        }
+        /*///////////////////////////////////*/
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.4);/*rgba(255, 255, 255, 0.4);*/
+/*  background-image: url("../Images/nehilp_fundo.png");
+  background-size: cover;*/
+  padding: 10px 10px 5px 10px;
+  font-size: 1rem;
+	border: 1px solid transparent;
+  box-shadow: 5px 5px 10px -6px rgba(0,0,0,0.3);
+
+  cursor: pointer; /*ipad*/
+}
+
+
+         /*///////////////////////////////////*/
+        @media screen and (max-width: 1024px) {
+
+         .grid-item {font-size: 0.9rem; background-color: rgba(255, 255, 255, 0.4);}
+        }
+        /*///////////////////////////////////*/
+
+.grid-item.item-empty {
+  background-color: transparent;
+  background-image: none;
+	border: 1px solid transparent;
+  box-shadow: none;
+}
+
+.grid-content {visibility: hidden;}
+.grid-item:hover .grid-content {visibility: visible;}
+
+.grid-link {visibility: hidden;}
+.grid-item:hover .grid-link {visibility: visible;}
+
+        /*///////////////////////////////////*/
+        @media screen and (max-width: 1024px) {
+        .grid-item:hover .grid-content {display: none; visibility: hidden;}
+        .grid-item:hover .grid-link {display: none; visibility: hidden;}
+        }
+        /*///////////////////////////////////*/
+
+.grid-item h1 {font-size: 1.3rem; color: rgba(255, 255, 255, 0.9); vertical-align: middle; padding-top: 5px; margin-top: 0;}
+.grid-item:hover h1 {font-size: 1.3rem; padding-top: 5px; margin-top: 0;}
+         /*///////////////////////////////////*/
+        @media screen and (max-width: 1024px) {
+
+       .grid-item h1 {font-size: 1.3rem; padding-top: 5px; margin-top:0;}
+       .grid-item:hover h1 {display: none; /*font-size: 1rem; padding-top: 0; padding-bottom: 5px; margin-top:0;*/}
+        }
+        @media screen and (max-width: 650px) {
+
+       .grid-item h1 {font-size: 1.1rem; padding-top: 5px; margin-top:0;}
+       .grid-item:hover h1 {display: none; /*font-size: 1rem; padding-top: 0; padding-bottom: 5px; margin-top:0;*/}
+        }
+        /*///////////////////////////////////*/
+
+.grid-link-large {display: none;}
+.grid-item:hover .grid-link-large {display: none;}
+
+        /*///////////////////////////////////*/
+        @media screen and (max-width: 1024px) {
+        .grid-item:hover .grid-link-large {display: block; font-size: 1.3rem; padding-top: 5px; margin-top:0;}
+        }
+        @media screen and (max-width: 650px) {
+        .grid-item:hover .grid-link-large {display: block; font-size: 1.1rem; padding-top: 5px; margin-top:0;}
+        }
+        /*///////////////////////////////////*/
+
+.grid-item a:link {text-decoration: none; background-color: transparent; color: #ffffff;}
+.grid-item a:visited {text-decoration: none; background-color: transparent; color: #ffffff;}
+.grid-item a:hover {text-decoration: none; background-color: transparent; color: #ffffff;}
+
+
+
+/*grid item hover behaviors*/
+
+.grid-item:hover {
+  padding: 10px 10px 5px 10px;
+  color: #000000;
+  background-image: none;
+  box-shadow: 5px 5px 10px -6px rgba(0,0,0,0.3);
+}
+
+     .grid-item.item-1-1:hover {
+       background-color: var(--alert-soft);
+       border: 1px solid var( --alert-soft);
+       opacity: 0.90;
+     }
+     .grid-item.item-1-1:hover h1 {color: #ffffff;}
+
+
+     .grid-item.item-1-2:hover,
+     .grid-item.item-1-3:hover,
+     .grid-item.item-2-3:hover,
+     .grid-item.item-2-4:hover,
+     .grid-item.item-3-4:hover  {
+       background-color: var(--accent-lighter);
+       border: 1px solid var(--accent-lighter);
+       opacity: 0.90;
+     }
+     .grid-item.item-1-2:hover h1,
+     .grid-item.item-1-3:hover h1,
+     .grid-item.item-2-3:hover h1,
+     .grid-item.item-2-4:hover h1,
+     .grid-item.item-3-4:hover h1
+     {color: #333333;}
+     .grid-item.item-1-2:hover .grid-link-large,
+     .grid-item.item-1-3:hover .grid-link-large,
+     .grid-item.item-2-3:hover .grid-link-large,
+     .grid-item.item-2-4:hover .grid-link-large,
+     .grid-item.item-3-4:hover .grid-link-large
+     {color: #333333;}
+
+
+     .grid-item.item-1-4:hover {
+       background-color: var(--green-strong);
+       border: 1px solid var(--green-strong);
+       opacity: 0.90;
+     }
+     .grid-item.item-1-4:hover h1 {color: #ffffff;}
+
+     .grid-item.item-2-1:hover,
+     .grid-item.item-2-2:hover,
+     .grid-item.item-3-2:hover {
+       background-color: var(--green-strong);
+       border: 1px solid var(--green-strong);
+       opacity: 0.90;
+     }
+     .grid-item.item-2-1:hover h1, .grid-item.item-2-2:hover h1, .grid-item.item-3-2:hover h1  {color: #ffffff;}
+
+     .grid-item.item-3-3:hover {
+       background-color: var(--accent);
+       border: 1px solid var(--accent);
+       opacity: 0.85;
+     }
+     .grid-item.item-3-3:hover h1 {color: #ffffff;}
+
+     .grid-item.item-empty:hover {
+       color: transparent;
+       background-color: transparent;
+       border: 0;
+       box-shadow: none;}
+
+
+
+/*grid-item distribution*/
+
+        /*///////////////////////////////////*/
+        @media screen and (max-width: 1024px) {
+         grid-item.nosmall {diplay: none;}
+        }
+
+.grid-item.item-1-1 {
+	/*z-index: 2;*/ /*if z-indez specified, dropdown-content from Navbar stays behind*/
+	grid-column: 1 / span 2;
+	grid-row: 1;
+}
+	.grid-item.item-1-1:hover {
+		z-index: 3;
+		grid-column: 1 /span 2;
+		grid-row: 1;
+	}
+
+.grid-item.item-1-2 {
+	/*z-index: 2;*/
+  grid-column: 3 / span 1;
+	grid-row: 1 / span 2;
+}
+    .grid-item.item-1-2:hover {
+    	z-index: 3;
+      grid-column: 3;
+    	grid-row: 1 / span 2;
+      font-size: 0.8rem;
+    }
+
+.grid-item.item-1-3 {
+	/*z-index: 2;*/
+	grid-column: 4 / span 1;
+  grid-row: 1;
+}
+    .grid-item.item-1-3:hover {
+    	z-index: 3;
+     grid-column: 4;
+    grid-row: 1;
+     font-size: 0.8rem;
+    }
+
+.grid-item.item-1-4 {
+	/*z-index: 2;*/
+	grid-column: 5;
+	grid-row: 1 / span 3;
+  background-size: auto;
+}
+.grid-item.item-1-4:hover {
+	z-index: 3;
+	grid-column: 5;
+	grid-row: 1 / span 3;
+}
+       /*///////////////////////////////////*/
+        @media screen and (max-width: 1024px) {
+         .grid-item.item-1-4 {display: none;}
+        }
+        /*///////////////////////////////////*/
+
+.grid-item.item-1-5 {
+	/*z-index; 1;*/	/*display: none;*/
+	background-color: transparent;
+ grid-column: 6;
+	grid-row: 1;
+}
+       /*///////////////////////////////////*/
+        @media screen and (max-width: 1024px) {
+         .grid-item.item-1-5 {display: none;}
+        }
+        /*///////////////////////////////////*/
+
+
+.grid-item.item-1-6 {
+	/*z-index; 1;*/	/*display: none;*/
+	background-color: transparent;
+ grid-column: 6;
+	grid-row: 1;
+}
+       /*///////////////////////////////////*/
+        @media screen and (max-width: 1024px) {
+         .grid-item.item-1-6 {display: none;}
+        }
+        /*///////////////////////////////////*/
+
+.grid-item.item-2-1 {
+	/*z-index: 2;*/
+ grid-column: 1;
+	grid-row: 2 / span 2;
+    background-size: auto;
+    background-position: right;
+}
+    .grid-item.item-2-1:hover {
+    z-index: 3;
+     grid-column: 1;
+    	grid-row: 2 / span 2;
+    }
+
+.grid-item.item-2-2 {
+	/*z-index: 2;*/
+ grid-column: 2;
+	grid-row: 2;
+}
+    .grid-item.item-2-2:hover {
+    z-index: 3;
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 0.8rem;
+    }
+
+.grid-item.item-2-3 {
+	/*z-index: 2;*/
+	grid-column: 3;
+	grid-row: 2;
+}
+    .grid-item.item-2-3:hover {
+    	z-index: 3;
+      grid-column: 3;
+    	grid-row: 2;
+      font-size: 0.8rem;
+    }
+
+
+.grid-item.item-2-4 {
+	/*z-index: 2;*/
+ grid-column: 4;
+	grid-row: 2;
+}
+    .grid-item.item-2-4:hover {
+    	z-index: 3;
+     grid-column: 4;
+    	grid-row: 2;
+     font-size: 0.8rem;
+    	}
+
+.grid-item.item-2-5 {
+	/*z-index; 1;*/	/*display: none;*/
+	background-color: transparent;
+ grid-column: 5;
+	grid-row: 2;
+}
+       /*///////////////////////////////////*/
+        @media screen and (max-width: 1024px) {
+         .grid-item.item-2-5 {display: none;}
+        }
+        /*///////////////////////////////////*/
+
+.grid-item.item-2-6 {
+	/*z-index; 1;*/	/*display: none;*/
+	background-color: transparent;
+ grid-column: 6;
+	grid-row: 2;
+}
+       /*///////////////////////////////////*/
+        @media screen and (max-width: 1024px) {
+         .grid-item.item-2-6 {display: none;}
+        }
+        /*///////////////////////////////////*/
+
+.grid-item.item-3-1 {
+	/*z-index; 1;*/	/*display: none;*/
+	background-color: transparent;
+	grid-column: 1;
+ grid-row: 3;
+}
+.grid-item.item-3-2 {
+	/*z-index: 2;*/
+	grid-column: 2;
+ grid-row: 3;
+}
+    .grid-item.item-3-2:hover {
+    	z-index: 3;
+      grid-column: 2;
+    	grid-row: 3;
+      font-size: 0.8rem;
+    }
+
+.grid-item.item-3-3 {
+	/*z-index: 2;*/
+	grid-column: 3 / span 2;
+  grid-row: 3;
+}
+    .grid-item.item-3-3:hover {
+    	z-index: 3;
+    	grid-column: 3 /span 2;
+      grid-row: 3;
+    }
+         /*///////////////////////////////////*/
+        @media screen and (max-width: 1024px) {
+         .grid-item.item-3-3 {grid-column: 3 / span 2;}
+         .grid-item.item-3-3:hover {grid-column: 3 / span 2;}
+        }
+        /*///////////////////////////////////*/
+
+/*.grid-item.item-3-4 {
+	z-index: 2;
+	grid-column: 5;
+ grid-row: 3;
+ font-size: 0.8rem;
+}
+    .grid-item.item-3-4:hover {
+    	z-index: 3;
+    	grid-column: 5;
+      grid-row: 3;
+    }*/
+         /*///////////////////////////////////*/
+        @media screen and (max-width: 1024px) {
+         .grid-item.item-3-4 {display: none;}
+        }
+        /*///////////////////////////////////*/
+
+.grid-item.item-3-5 {
+	/*z-index; 1;*/	/*display: none;*/
+	background-color: transparent;
+	grid-column: 6;
+ grid-row: 3;
+}
+         /*///////////////////////////////////*/
+        @media screen and (max-width: 1024px) {
+         .grid-item.item-3-5 {display: none;}
+        }
+        /*///////////////////////////////////*/
+
+.grid-item.item-3-6 {
+	/*z-index; 1;*/	/*display: none;*/
+	background-color: transparent;
+	grid-column: 6;
+ grid-row: 3;
+}
+         /*///////////////////////////////////*/
+        @media screen and (max-width: 1024px) {
+         .grid-item.item-3-6 {display: none;}
+        }
+        /*///////////////////////////////////*/
+
+.grid-item.item-4-1 {
+	/*z-index; 1;*/	/*display: none;*/
+	background-color: transparent;
+	grid-column: 1;
+ grid-row: 4;
+}
+
+.grid-item.item-4-2 {
+	/*z-index; 1;*/	/*display: none;*/
+	background-color: transparent;
+	grid-column: 2;
+ grid-row: 4;
+}
+
+.grid-item.item-4-3 {
+	/*z-index; 1;*/	/*display: none;*/
+	background-color: transparent;
+	grid-column: 3;
+ grid-row: 4;
+}
+
+.grid-item.item-4-4 {
+	/*z-index; 1;*/	/*display: none;*/
+	background-color: transparent;
+	grid-column: 4;
+ grid-row: 4;
+}
+         /*///////////////////////////////////*/
+        @media screen and (max-width: 1024px) {
+         .grid-item.item-4-4 {display: none;}
+        }
+        /*///////////////////////////////////*/
+
+.grid-item.item-4-5 {
+	/*z-index; 1;*/	/*display: none;*/
+	background-color: transparent;
+	grid-column: 5;
+ grid-row: 4;
+}
+         /*///////////////////////////////////*/
+        @media screen and (max-width: 1024px) {
+         .grid-item.item-4-5 {display: none;}
+        }
+        /*///////////////////////////////////*/
+.grid-item.item-4-6 {
+	/*z-index; 1;*/	/*display: none;*/
+	background-color: transparent;
+	grid-column: 6;
+ grid-row: 4;
+}
+         /*///////////////////////////////////*/
+        @media screen and (max-width: 1024px) {
+         .grid-item.item-4-6 {display: none;}
+        }
+        /*///////////////////////////////////*/
+/*GRID STYLES END**************************************/
+/*****************************************************/
+
+
+/*HB styles*/
+
+.HB-menu a:link {text-decoration: none; background-color: transparent; color: #ffffff; padding: 3px;}
+.HB-menu a:visited {text-decoration: none; background-color: transparent; color: #ffffff; padding: 3px;}
+.HB-menu a:hover {text-decoration: none; background-color: transparent; color: var(--alert-soft); padding: 3px;}
+
+/*/
+/*********************************************************************************************************/
+/*CSS END**************************************************************************************/
+/*********************************************************************************************************/
+/*/

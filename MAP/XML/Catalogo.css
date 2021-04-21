@@ -1,0 +1,45 @@
+
+/* padding values top right bottom left */
+
+
+/* Table hover and number styles */
+
+
+   
+   
+
+/******************************/ 
+
+
+
+
+   Document {font-family: "Georgia", Garamond, serif;}
+    
+   a:link { color: #006699; text-decoration: none; } 
+   a:visited { color: #99cccc; text-decoration: none;	}
+   a:active { color: #ff6666; text-decoration: none;	 }
+   a:hover { color: #ff9999; text-decoration: none;	 }
+   
+   h1 {padding: 30px 0px 0px 0px; margin: 0px 0px 0px 0px; color: #99cccc; font-size: 38px; font-weight: bold;}
+   h2 {padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px; color: #99cccc; font-size: 28px; font-weight: bold;}
+   h3 {padding: 20px 0px 0px 0px; margin: 0px 0px 0px 0px; color: #99cccc; font-size: 20px; font-weight: bold;}
+   h4 {padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px; color: #999999; font-size: 16px; font-weight: normal; border-bottom: 1px solid #cccccc;}
+   h5 {padding: 0px 0px 30px 0px; margin: 0px 0px 0px 0px; color: #999999; font-size: 16px; font-weight: normal;}
+    
+tr:hover:not(:first-child) {background-color:#ffffe6;}  <!--#e6f2ff-->
+
+table {
+    counter-reset: rowNumber;
+}
+
+table tr:not(:first-child) {
+    counter-increment: rowNumber;
+}
+
+table tr td:first-child::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
+}
+   
+

@@ -1,0 +1,103 @@
+XSL
+
+Código para pegar todas as nomeações (até 3 documentos)
+
+
+    <xsl:choose><!--Se autora-->
+          
+    <xsl:when test="Data[@name='Perfil']/value[text()='Autora']">  
+ 
+    <span style="font-size: 1.20rem;"><em><xsl:value-of select="Data[@name='Voz']"/></em></span>
+    <br/>
+    <br/>
+    <span style="font-size: 1.20rem;"><em><xsl:value-of select="Data[@name='Nomeação']"/></em></span>
+    <br/>
+    (<xsl:value-of select="Data[@name='Ano do documento']"/>)
+      
+        
+        <xsl:choose><!--Se houver dois documentos-->
+          <xsl:when test="Data[@name='Número de documentos']/value[text()='2']">
+        <br/>
+        <br/>
+        <br/>
+        <span style="font-size: 1.20rem;"><em><xsl:value-of select="Data[@name='Voz no segundo documento']"/></em></span>
+        <br/>
+        <br/>
+        <span style="font-size: 1.20rem;"><em><xsl:value-of select="Data[@name='Nomeação no segundo documento']"/></em></span>
+        <br/>
+        (<xsl:value-of select="Data[@name='Ano do documento, segundo documento']"/>)
+        </xsl:when>
+          <xsl:otherwise>
+           
+          </xsl:otherwise>
+        </xsl:choose><!--Se houver dois documentos-->
+        
+        
+        <xsl:choose><!--Se houver três documentos-->
+          <xsl:when test="Data[@name='Número de documentos']/value[text()='3']">
+        <br/>
+        <br/>
+        <span style="font-size: 1.20rem;"><em><xsl:value-of select="Data[@name='Voz no segundo documento']"/></em></span>
+        <br/>
+        <br/>
+        <span style="font-size: 1.20rem;"><em><xsl:value-of select="Data[@name='Nomeação no segundo documento']"/></em></span>
+        <br/>
+        (<xsl:value-of select="Data[@name='Ano do documento, segundo documento']"/>)
+        <br/>
+        <br/>
+        <br/>
+        <span style="font-size: 1.20rem;"><em><xsl:value-of select="Data[@name='Voz no terceiro documento']"/></em></span>
+        <br/>
+        <span style="font-size: 1.20rem;"><em><xsl:value-of select="Data[@name='Nomeação no terceiro documento']"/></em></span>
+        <br/>
+        (<xsl:value-of select="Data[@name='Ano do documento, terceiro documento']"/>)
+    
+          </xsl:when>
+          <xsl:otherwise>
+        
+           </xsl:otherwise>
+        </xsl:choose><!--Se houver três documentos-->
+ 
+  </xsl:when>
+  <xsl:otherwise><!--Se não autora -->
+  
+        <span style="font-size: 1.20rem;"><em><xsl:value-of select="Data[@name='Nomeação']"/></em></span>
+        <br/>
+        <br/>
+        <xsl:value-of select="Data[@name='Ano do documento']"/>
+        <!--<xsl:text>- </xsl:text><xsl:value-of select="Data[@name='Autoria do documento']"/><xsl:text>, </xsl:text>-->
+        
+        <xsl:choose><!--Se houver dois documentos-->
+          <xsl:when test="Data[@name='Número de documentos']/value[text()='2']">
+        <br/>
+        <br/>
+        <br/>
+        <span style="font-size: 1.20rem;"><em><xsl:value-of select="Data[@name='Nomeação no segundo documento']"/></em></span>
+        <br/>
+        <xsl:text>- </xsl:text><xsl:value-of select="Data[@name='Autoria do documento, segundo documento']"/><xsl:text>, </xsl:text><xsl:value-of select="Data[@name='Ano do documento, segundo documento']"/>
+        </xsl:when>
+          <xsl:otherwise>
+           
+          </xsl:otherwise>
+        </xsl:choose><!--Se houver dois documentos-->
+        
+        <xsl:choose><!--Se houver três documentos-->
+          <xsl:when test="Data[@name='Número de documentos']/value[text()='3']">
+        <br/>
+        <br/>
+        <em><xsl:value-of select="Data[@name='Nomeação no segundo documento']"/></em>
+        <br/>
+        <xsl:text>- </xsl:text><xsl:value-of select="Data[@name='Autoria do documento, segundo documento']"/><xsl:text>, </xsl:text><xsl:value-of select="Data[@name='Ano do documento, segundo documento']"/>
+        <br/>
+        <br/>
+        <em><xsl:value-of select="Data[@name='Nomeação no terceiro documento']"/></em>
+        <br/>
+        <xsl:text>- </xsl:text><xsl:value-of select="Data[@name='Autoria do documento, terceiro documento']"/><xsl:text>, </xsl:text><xsl:value-of select="Data[@name='Ano do documento, terceiro documento']"/>
+        </xsl:when>
+          <xsl:otherwise>
+           
+          </xsl:otherwise>
+        </xsl:choose><!--Se houver três documentos-->
+
+  </xsl:otherwise><!--Se não autora -->
+  </xsl:choose><!--Se autora--> 

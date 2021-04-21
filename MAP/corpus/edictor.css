@@ -1,0 +1,886 @@
+/*===============================================================*/
+
+/*------------------------COLOR PALLETE-------------------------*/
+
+/*==============================================================*/
+:root {
+   --pink: rgba(255, 102, 102, 1);
+   --softpink: rgba(255, 102, 102, 0.7);
+
+   --green: rgba(0, 204, 153, 1);
+   --softgreen: rgba(0, 204, 153, 0.8);
+   --verysoftgreen: rgba(0, 204, 153, 0.5);
+
+   --blue: rgba(0, 153, 153, 1);
+   --softblue: rgba(0, 153, 153, 0.7);
+   --verysoftblue: rgba(0, 153, 153, 0.4);
+
+   --yellow: rgba(255, 204, 153, 1); /*(255, 204, 102, 1) (255, 102, 0, 1) */
+   --softyellow: rgba(255, 204, 153, 0.8);
+   --softyellow06: rgba(255, 204, 153, 0.6);
+
+   --orange: rgba(255, 133, 51, 1);
+   --softorange: rgba(255, 133, 51, 0.7);
+
+   --purple: rgba(223, 159, 191, 1); /*102, 102, 255,*/
+   --softpurple: rgba(223, 159, 191, 0.7);
+   --verysoftpurple: rgba(223, 159, 191, 0.4);
+
+   --offwhite: rgba(250, 250, 250, 0.9);
+   --offwhite08: rgba(250, 250, 250, 0.8);
+   --offwhite07: rgba(250, 250, 250, 0.7);
+   --offwhite06: rgba(250, 250, 250, 0.6);
+   --offwhite04: rgba(250, 250, 250, 0.4);
+
+   --black: rgba(1, 1, 1, 1);
+   --offblack: rgba(1, 1, 1, 0.9);
+   --offblack08: rgba(1, 1, 1, 0.8);
+   --offblack07: rgba(1, 1, 1, 0.7);
+   --offblack06: rgba(1, 1, 1, 0.6);
+   --offblack04: rgba(1, 1, 1, 0.4);
+}
+
+
+
+/*===============================================================*/
+
+/*-------------INSTRUCTIONS FOR REGULAR HTML ELEMENTS ----------*/
+
+/*==============================================================*/
+
+
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color:var(--black);
+  margin: 0px;
+  padding: 0px;
+  font-size: 0.8em;
+  background: #ffffff;
+}
+
+  H1, .title {
+    font-size: 22px;
+    line-height: normal;
+    color: var(--offblack);
+    margin-top: 20px;
+    padding: 0px;
+    text-align: left;
+  }
+
+  H2, .subtitle {
+    font-size: 20px;
+    color: var(--offblack);
+    margin: 20px 0px 20px;
+    padding: 0px;
+    text-align: left;
+    }
+
+  H3{
+    font-size: 1.5em;
+    color: var(--offblack);
+    margin: 20px 0px 10px;
+    padding: 0px;
+    text-align: left;
+  }
+
+  H4{
+    font-family: "Courier New", Courier, mono;
+    font-size: 1em;
+    font-weight: normal;
+    color: var(--offblack);
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+  }
+
+  H5{
+    font-size: 14px;
+    color: #666666;
+    margin: 0px;
+    padding: 0px;}
+
+  H6{
+    font-size: 10px;
+    color: #666666;
+    margin: 0px;
+    padding: 0px;}
+
+  H7{
+    font-size: 12px;
+    color: #666666;
+    margin: 0px;
+    padding: 0px;}
+
+    hr {
+      border: none;
+      height: 0.03em;
+      color: #cccccc; /* old IE */
+      background-color: #cccccc; /* Modern Browsers */
+      margin-bottom: 30px;
+    }
+
+    hr:after {border: 0.5px solid #999999;}
+
+/*=======================================================================*/
+
+/*--INSTRUCTIONS FOR EDICTOR WORD, SPAN, PARAGRAPH AND SECTION CLASSES--*/
+
+/*======================================================================*/
+
+/*===========================*/
+/*--GENERAL eDictor markup--*/
+/*===========================*/
+
+
+/*to make floating boxes on hover*/
+
+/*default positioning and content*/
+
+/*boxes with link attribuite name*/
+a:hover:after {
+    content: attr(name);
+    position: relative;
+    float: right;
+    clear: right;
+    z-index: 2000;
+  }
+
+/*boxes with attribuite class*/
+  word[class]:hover:after,
+  span[class]:hover:after,
+  p[class]:hover:after   {
+    content: attr(class);
+    position: relative;
+    float: right;
+    z-index: 3000;
+  }
+
+  p[class]:hover:before,
+  word[class]:hover:before   {
+    content: attr(class);
+    position: relative;
+    float: left;
+    z-index: 3000;
+  }
+
+/*sizes*/
+a:hover:after {min-width: 60px; height:60px; padding-top: 30px; padding-right: 10px; padding-bottom: 3px; padding-left: 10px;}
+word[class]:hover:after, word[class]:hover:before {min-width: 50px; height: 40px; padding-top: 20px; padding-right: 10px; padding-bottom: 3px; padding-left: 10px;}
+span[class]:hover:after,
+p[class]:hover:before, p[class]:hover:after {min-width: 50px; min-height: 25px; padding-top: 15px; padding-right: 10px; padding-bottom: 3px; padding-left: 10px;}
+
+/*margins*/
+/*specific margins according to each level*/
+
+a:hover:after {margin-top: -80px; /*margin-right: 50px;*/ margin-bottom: 0px; margin-left: 100px;}
+word[class]:hover:after, word[class]:hover:before {margin-top: -10px; /*margin-right: 0px;*/ margin-bottom: 0px; margin-left: 1px;}
+span[class]:hover:after {margin-top: 0px; /*margin-right: 0px;*/ margin-bottom: 0px; margin-left: 1px;}
+p[class]:hover:before, p[class]:hover:after {margin-top: -45px; /*margin-right: 0px;*/ margin-bottom: 0px; margin-left: -75px;}
+
+    /*special instructions for links inside word, span and p with a class (margins and sizes)*/
+    word[class] a:hover:after {margin-top: -90px; /*margin-right: 15px;*/ margin-left: -60px;}
+    span[class] a:hover:after {margin-top: -90px; /*margin-right: 15px;*/ margin-left: -60px;}
+
+
+/*changed margins for texts inside a td with class page (fac-simile)*/
+/*when td.page width is 450px*/
+
+td.page a:hover:after {margin-top: -80px; margin-right: -140px; margin-bottom: 0px; margin-left: 0px;}
+td.page word[class]:hover:after {margin-top: -10px; margin-right: -100px; margin-bottom: 0px; margin-left: 1px;}
+td.page span[class]:hover:after {margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 1px;}
+td.page p[class]:hover:before, td.page p[class]:hover:after {margin-top: -15px; margin-right: 0px; margin-bottom: 0px; margin-left: 75px;}
+
+    /*special instructions for links inside word, span and p with a class (margins and sizes)*/
+    td.page word[class] a:hover:after {margin-top: -90px; margin-right: -160px; margin-left: 0px;}
+    td.page span[class] a:hover:after {margin-top: -90px; margin-right: -160px; margin-left: 0px;}
+
+/*styles*/
+/*default inside styles (colors, borders, shadows - may be changed below) */
+
+/*links*/
+a:hover:after {
+    border: 1px solid #999999;
+    box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.5);
+    color: #000000;
+    font-size: 30px;
+  }
+
+/*word, span, p */
+word[class]:hover:after, word[class]:hover:before,
+span[class]:hover:after, span[class]:hover:before,
+p[class]:hover:before, p[class]:hover:after  {
+        border: 1px solid #999999;
+        box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.5);
+        color: #000000;
+        font-size: 16px;
+        font-style: italic;
+      }
+
+      word[class]:hover:after, word[class]:hover:before   {background: var(--offwhite07); background-color: var(--offwhite07);}
+
+/*to change style on links and word elements on hover*/
+/*change colors as desired*/
+
+a:link, a:visited, a:active, a:focus {text-decoration: none; border-bottom: none;}
+a:hover {text-decoration: none; border-bottom: 5px solid;}
+a:link, a:visited, a:active, a:focus {color: var(--offblack);}
+a:hover {color: #000000; border-color: var(--softgreen);}
+a:hover:after {background: var(--softgreen);}
+
+td.page a:hover {color: #000000; border-color: var(--softblue);}
+td.page a:hover:after {background: var(--softblue);}
+
+/*to change format of image scrern tips*/
+
+td.fac-simile a:hover:before {
+      content: attr(title);
+      position: relative;
+      float: left;
+      z-index: 2000;
+
+      width: 90%; height: 100%;
+      padding-top: 40px; padding-right: 10px; padding-bottom: 3px; padding-left: 10px;
+      margin-bottom: -200px;
+
+      border: 1px solid #999999;
+      box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.5);
+      background-color: var(--offwhite); background: var(--offwhite);
+      color: #000000;
+      font-size: 30px;
+      font-style: italic;
+    }
+
+/*to set all non-link elements to show pointer on hover*/
+word[class]:hover,
+span[class]:hover,
+p[class]:hover   {cursor: pointer;}
+
+
+/*to make backgrounds on word on hover spread a little
+word[class]:hover {
+  padding-top: 3px; padding-bottom: 3px; padding-left: 3px; padding-right: 3px;
+  margin-left: -3px; margin-right: -3px;
+}(not working very well)*/
+
+/*to give a padding to paragraphs with class
+p[class] {padding: 8px;}*/
+
+/*ATTENTION floating box after paragraph and before word is not displayed by default; activate for specific classes below*/
+p[class]:hover:after {display: none;}
+word[class]:hover:before {display: none;}
+
+/*===========================*/
+/*--SPECIFIC MC markup--*/
+/*===========================*/
+
+
+/*COLORS AND FONT STYLES inside the floating boxes*/
+/*to differentiate classes*/
+
+/*specific background colors on hover and floating boxes*/
+.lex_toponimo:hover:after {background: var(--softorange); background-color: var(--softorange);}
+.lex_toponimo:hover {background: var(--softorange); background-color: var(--softorange); }
+.lex_lingua:hover:after, .lex_lingua:hover,
+.lex_lingua_i:hover:after, .lex_lingua_i:hover,
+.lex_lingua_ii:hover:after, .lex_lingua_ii:hover  {background: var(--softpink); background-color: var(--softpink);}
+.lex_gentilico:hover:after, .lex_gentilico:hover  {background: var(--softyellow); background-color: var(--softyellow);}
+.estrangeira:hover:after, .estrangeira:hover  {background: var(--softblue); background-color: var(--softblue);}
+.latin:hover:after {background: var(--offwhite07); background-color: var(--offwhite07);}
+.latin:hover  {background: var(--softblue); background-color: var(--softblue);}
+._exemplo:hover:after, ._exemplo:hover {background: var(--softpurple); background-color: var(--softpurple);}
+.ex_list:hover:after, .ex_list:hover,
+.ex_cols:hover:after, .ex_cols:hover {background: var(--verysoftpurple); background-color: var(--verysoftpurple);}
+.tipografia:hover:after, .conjectura:hover:after, .sic:hover:after, .x_duvida:hover:after {background: var(--offwhite07);}
+
+p[class]:hover:before {background: var(--offwhite07); background-color: var(--offwhite07);}
+
+p[class=blank]:hover {background: var(--softyellow); background-color: var(--softyellow);}
+
+p[class=margin_top_left]:hover:after,
+span[class=margin_top_left]:hover:after,
+span[class=margin_left]:hover:after,
+span[class=margin_top_right]:hover:after,
+p[class=reclame]:hover:after,
+p[class=punho]:hover:after,
+span[class=assinatura]:hover:after,
+word[class=margin_top_right]:hover:after,
+word[class=reclame]:hover:after,
+word[class=page_number]:hover:after  {background: var(--offwhite06); background-color: var(--offwhite06);/*background: var(--softyellow); background-color: var(--softyellow);*/}
+word[class=margin_left]:hover:before {background: var(--offwhite); background-color: var(--offwhite);}
+
+/*these are all the page-organization categories*/
+p[class=margin_top_left]:hover,
+span[class=margin_top_left]:hover,
+span[class=margin_left]:hover,
+span[class=margin_top_right]:hover,
+p[class=reclame]:hover,
+p[class=punho]:hover,
+span[class=assinatura]:hover,
+word[class=margin_top_right]:hover,
+word[class=reclame]:hover,
+word[class=page_number]:hover {
+  background: var(--softyellow06); background-color: var(--softyellow06);/*border-top: 5px solid var(--softyellow);*/
+  color: #000000;}
+  /*padding-top: 10px; padding-bottom: 10px;
+  margin-top: -10px; margin-bottom: -10px; this makes the background thiker than the text space*/
+
+  p[class=margin_top_left]:hover a:link, a:visited, a:active,
+  span[class=margin_top_left]:hover a:link, a:visited, a:active,
+  span[class=margin_left]:hover a:link, a:visited, a:active,
+  span[class=margin_top_right]:hover a:link, a:visited, a:active,
+  p[class=reclame]:hover a:link, a:visited, a:active,
+  p[class=punho]:hover a:link, a:visited, a:active,
+  span[class=assinatura]:hover a:link, a:visited, a:active,
+  word[class=margin_top_right]:hover a:link, a:visited, a:active,
+  word[class=reclame]:hover a:link, a:visited, a:active,
+  word[class=page_number]:hover a:link, a:visited, a:active    {color: #000000;}
+
+  p[class=margin_top_left] a:hover,
+  span[class=margin_top_left] a:hover,
+  span[class=margin_left] a:hover,
+  span[class=margin_top_right] a:hover,
+  p[class=reclame] a:hover,
+  p[class=punho] a:hover,
+  span[class=assinatura] a:hover,
+  word[class=margin_top_right] a:hover,
+  word[class=reclame] a:hover,
+  word[class=page_number] a:hover   {border-bottom: 5px solid var(--softblue);}
+
+/*specific font styles*/
+.estrangeira, .latin, ._exemplo   {font-style: italic;}
+.tipografia, .conjectura, .sic, .x_duvida {text-decoration: underline;}
+.tipografia:hover, .conjectura:hover, .sic:hover, .x_duvida:hover {text-decoration: none;}
+
+
+/*for texts in the margin*/
+word[class=margin_left]:hover:before { font-size: 10px;}
+p[class=margin_top_left]:hover:after,
+span[class=margin_top_left]:hover:after,
+span[class=margin_left]:hover:after,
+span[class=margin_top_right]:hover:after,
+p[class=punho]:hover:after,
+span[class=assinatura]:hover:after,
+word[class=margin_top_right]:hover:after {font-size: 14px;}
+
+/*restrictions to avoid clashing - classes inside classes, classes inside classes*/
+/*must come last*/
+p.latin .estrangeira:hover, p.estrangeira .estrangeira:hover,
+p.latin span.latin:hover, p.latin word.latin:hover  {background: transparent; background-color: transparent;}
+p.latin:hover .tipografia, p.latin:hover .conjectura, p.latin:hover .sic, p.latin:hover .x_duvida {color: var(--offwhite07)}
+p.latin .tipografia:hover, p.latin .conjectura:hover, p.latin .sic:hover, p.latin .x_duvida:hover {border-bottom: 5px solid var(--offwhite07); text-decoration: none;}
+p.latin span.latin:hover {color: inherit;}
+p.latin:hover a:link, p.latin:hover a:visited, p.latin:hover a:active, p.latin:hover a:focus {color: var(--offwhite07);}
+p.latin a:hover {border-bottom: 5px solid var(--offwhite07); text-decoration: none;}
+p.latin word[class]:hover {border-bottom: 5px solid var(--offwhite07); text-decoration: none;}
+p.latin a:hover:after {background: var(--verysoftblue); background-color: var(--verysoftblue);}
+
+
+
+/*POSITIONS AND SIZES*/
+
+/*paragraph classes to display floating box after
+ and word classes to display floating boxes before*/
+p[class=margin_top_left]:hover:after,
+span[class=margin_top_left]:hover:after,
+span[class=margin_left]:hover:after,
+span[class=margin_top_right]:hover:after,
+p[class=margin_top_left]:hover:after,
+p[class=reclame]:hover:after,
+p[class=punho]:hover:after,
+span[class=assinatura]:hover:after,
+word[class=reclame]:hover:after,
+word[class=margin_left]:hover:before {display: block;}
+
+p[class=margin_top_left]:hover:before,
+p[class=margin_top_left]:hover:before,
+span[class=margin_top_left]:hover:before,
+span[class=margin_left]:hover:before,
+span[class=margin_top_right]:hover:before,
+p[class=reclame]:hover:before,
+p[class=punho]:hover:before,
+span[class=assinatura]:hover:before,
+word[class=reclame]:hover:before,
+word[class=margin_left]:hover:after {display: none;}
+
+/*do not display boxes in some classes*/
+p[class=capitular]:hover:before,
+p[class=title]:hover:before, span[class=title]:hover:after,
+p[class=subtitle]:hover:before, span[class=subtitle]:hover:after,
+p[class=paratexto]:hover:before, span[class=paratexto]:hover:after,
+p[class=page_number]:hover:before {display: none;}
+
+/*change class names on boxes*/
+p[class=blank]:hover:before {content: 'em branco';}
+p[class=punho]:hover:after {content: 'mudança de punho'; }
+p[class=margin_top_left]:hover:after {content: 'texto à margem';}
+span[class=margin_top_left]:hover:after {content: 'texto à margem';}
+span[class=margin_left]:hover:after {content: 'texto à margem';}
+span[class=margin_top_right]:hover:after {content: 'texto à margem';}
+p[class=margin_left]:hover:after {content: 'texto à margem'; }
+word[class=margin_left]:hover:before,
+word[class=margin_top_right]:hover:after {content: 'texto à margem';}
+word[class=reclame]:hover:after {content: 'texto à margem (reclame)';}
+word[class=punho]:hover:after {content: 'mudança de punho'; }
+word[class=page_number]:hover:after {content: 'número de página'; }
+word[class=x_duvida]:hover:after {content: '?'; }
+
+/*special cases:
+  elements to be displayed in the margin of the texts*/
+
+/*special displays for boxes of elements in the margin of texts*/
+word[class=margin_left]:hover:before {position: relative; float: left;}
+
+span[class=margin_top_right]:hover:after,
+span[class=assinatura]:hover:after,
+p[class=reclame]:hover:after,
+word[class=reclame]:hover:after,
+word[class=margin_top_right]:hover:after,
+word[class=punho]:hover:after,
+word[class=page_number]:hover:after {float: left;}
+
+
+/*special sizes and margins for boxes of elements in the margin of texts*/
+span[class=assinatura]:hover:after,
+p[class=margin_top_left]:hover:after,
+span[class=margin_top_left]:hover:after,
+span[class=margin_left]:hover:after,
+span[class=margin_top_right]:hover:after,
+p[class=reclame]:hover:after,
+p[class=punho]:hover:after,
+word[class=reclame]:hover:after,
+word[class=margin_top_right]:hover:after,
+word[class=page_number]:hover:after {height: 25px; width: auto; }
+
+
+/*span[class=assinatura]:hover:after,
+p[class=margin_top_left]:hover:after,
+span[class=margin_top_left]:hover:after,
+span[class=margin_top_right]:hover:after,
+p[class=reclame]:hover:after,
+word[class=reclame]:hover:after,
+p[class=punho]:hover:after,
+word[class=margin_top_right]:hover:after,
+word[class=page_number]:hover:after {margin-left: -270px;}*/
+
+
+/*special hover behaviour format for elements in the margin of texts*/
+/*top and bottom margins on hover - must be same as each element top margin or text will 'jump'*/
+p[class=margin_top_left]:hover, p[class=margin_top_left] {margin-top: -55px; margin-bottom: -5px; padding-top: 25px; padding-bottom: 35px; }
+span[class=margin_top_left]:hover, span[class=margin_top_left] {margin-top: -55px; margin-bottom: -5px; padding-top: 15px; padding-bottom: 15px; }
+span[class=margin_left]:hover, span[class=margin_left] {margin-top: -25px; margin-bottom: 25px; padding-top: 25px; padding-bottom: 25px; }
+span[class=margin_top_right]:hover, span[class=margin_top_right] {margin-top: -55px; margin-bottom: -5px; padding-top: 25px; padding-bottom: 35px; }
+p[class=reclame]:hover, p[class=reclame] {margin-top: -15px; margin-bottom: -15px; padding-top: 15px; padding-bottom: 15px;}
+p[class=punho]:hover, p[class=punho] {margin-top: -15px; margin-bottom: -15px; padding-top: 30px; padding-bottom: 30px;}
+word[class=reclame]:hover, word[class=reclame] {margin-top: 25px; padding-top: 25px; margin-bottom: -25px; padding-bottom: 25px;}
+word[class=page_number]:hover, word[class=page_number] {margin-top: -30px; padding-top: 30px;}
+word[class=margin_top_right]:hover, word[class=margin_top_right] {margin-top: -55px; margin-bottom: -5px; padding-top: 25px; padding-bottom: 35px; }
+#text_content div.footer p[class=reclame]:hover {margin-top: 0px;}
+
+span[class=assinatura]:hover,
+span[class=assinatura] {margin-top: -5px; margin-bottom: -5px; padding-top: 5px; padding-bottom: 5px;}
+
+/*left and right margins - to expand over element margins*/
+p[class=margin_top_left],
+p[class=punho] {margin-left: -80px; padding-left: 40px; margin-right: -70px; padding-right: 70px; }
+
+p[class=margin_top_left]:hover {margin-left: -80px; padding-left: 40px; margin-right: -10px; padding-right: 20px;}
+p[class=punho]:hover {margin-left: -90px; padding-left: 40px; margin-right: -10px; padding-right: 20px;}
+
+span[class=margin_top_left] {width: 80%; margin-left: -80px; padding-left: 40px; margin-right: -70px; padding-right: 70px; }
+span[class=margin_top_left]:hover {width: 100%; margin-left: -80px; padding-left: 40px; margin-right: -10px; padding-right: 20px;}
+span[class=margin_left] {width: 80%; margin-left: -80px; padding-left: 20px; margin-right: -70px; padding-right: 70px; }
+span[class=margin_left]:hover {width: 100%; margin-left: -80px; padding-left: 20px; margin-right: -70px; padding-right: 70px;}
+span[class=margin_top_right] {width: 80%; margin-left: -80px; padding-left: 80px; margin-right: -100px; padding-right: 90px;}
+span[class=margin_top_right]:hover {width: 100%; margin-left: -80px; padding-left: 0px; margin-right: -100px; padding-right: 90px;}
+
+p[class=punho] {margin-left: -80px; padding-left: 80px; margin-right: -70px; padding-right: 70px; }
+p[class=punho]:hover {margin-left: -80px; padding-left: 80px; margin-right: -10px; padding-right: 20px;}
+
+
+
+p[class=reclame],
+span[class=assinatura],
+word[class=reclame],
+word[class=page_number],
+word[class=margin_top_right] {
+  width: 80%;
+  margin-left: -80px; padding-left: 80px;
+  margin-right: -100px; padding-right: 90px;}
+
+p[class=reclame]:hover,
+span[class=assinatura]:hover,
+word[class=reclame]:hover,
+word[class=page_number]:hover,
+word[class=margin_top_right]:hover {
+  width: 100%;
+  margin-left: -80px; padding-left: 0px;
+  margin-right: -100px; padding-right: 90px;}
+
+
+#text_content div.footer p[class=reclame]:hover:after {margin-top: -12px; margin-left: 0px; margin-right: -90px;}
+
+
+
+/*restrictions to avoid clashing - links inside classes, classes inside classes*/
+/*must come last*/
+p[class=latin] a:hover:after {margin-top: -90px; margin-right: -80px; margin-left: 0;}
+p[class=latin] word[class]:hover:after {margin-top: -30px; margin-right: -80px; margin-left: 0;}
+p[class=margin_top_left] word[class]:hover:after {margin-top: -30px; margin-right: -80px; margin-left: 0;}
+p[class=margin_top_left] a:hover:after {margin-top: -90px; margin-right: -80px; margin-left: 0;}
+
+span[class=assinatura] a:hover:after {/*margin-top: -90px;*/ margin-right: -200%; margin-left: 0px;}
+span[class=assinatura] ~ span[class=assinatura] {padding-bottom: 0; margin-bottom:0; padding-top: 0; margin-top: 0px; }
+span[class=assinatura]:hover + span[class=assinatura] {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  margin-top: -25px;
+}
+
+
+span[class=assinatura] a:hover:after {/*margin-top: -30px;  margin-right: -70px;*/ margin-left: 0px;}
+span[class=assinatura] word[class]:hover:after {/*margin-top: -30px;*/ margin-right: -70%; margin-left: 0px;}
+span[class=margin_top_left] a:hover:after {/*margin-top: -90px;*/ margin-right: -200%; margin-left: 0px;}
+span[class=margin_top_left] word[class]:hover:after {/*margin-top: -30px;*/ margin-right: -50%; margin-left: 0px;}
+span[class=margin_left] a:hover:after {/*margin-top: -90px;*/ margin-right: -200%; margin-left: 0px;}
+span[class=margin_left] word[class]:hover:after {/*margin-top: -30px;*/ margin-right: -50%; margin-left: 0px;}
+span[class=margin_top_right] a:hover:after {/*margin-top: -90px;*/ margin-right: -200%; margin-left: 0px;}
+span[class=margin_top_right] word[class]:hover:after {/*margin-top: -30px;*/ margin-right: -50%; margin-left: 0px;}
+
+p[class=latin] .estrangeira:hover:after,
+p[class=latin] word[class=latin]:hover:after,
+p[class=latin] span[class=latin]:hover:after {display: none;}
+
+
+
+/*PARAGRAPH AND WORD STYLES*/
+
+/*special paragraph styles*/
+p.latin { margin-right: 200px;}
+p.ex_cols { width: 90%; }
+p.ex_list { width: 90%; }
+p.ex_text { width: 90%; }
+p.title,
+p.subtitle {padding-left: 0; padding-right: 0;}
+p.page_number { text-align: left; color: var(--offblack06); font-size: 18px; margin-left: 300px; padding-top: 2px; padding-bottom: 2px;}
+
+
+
+
+
+/*special word and span styles*/
+
+/*do not define margins here for the page-organization classes*/
+
+p[class=reclame] {
+text-align: left;
+color: var(--offblack06);
+font-style: italic;
+/*margin-right: 100px;
+padding-left: 170px;*/
+/*padding-top: 2px;*/}
+
+#text_content div.footer p[class=reclame] {
+text-align: left;
+color: var(--offblack06);
+font-style: italic;
+/*margin-right: 100px; margin-top: 5px;
+padding-left: 200px; padding-right: 10px;*/
+/*padding-top: 2px;*/}
+
+span[class=margin_top_right] {
+display: block;
+text-align: right;
+color: var(--offblack06);
+font-style: italic;
+}
+span[class=margin_top_left] {
+display: block;
+text-align: left;
+color: var(--offblack06);
+font-style: italic;
+}
+span[class=margin_left] {
+display: block;
+text-align: left;
+color: var(--offblack06);
+font-style: italic;
+}
+span[class=assinatura] {
+  display: inline-block;
+  text-align: right;
+  color: var(--offblack06);
+  font-style: italic;
+  /*margin-top: 20px; margin-bottom: 20px;* margin-left: -75px; */
+  /*padding: 0;*/
+}
+word[class=reclame] {
+  display: block;
+  text-align: right;
+  color: var(--offblack06);
+  font-style: italic;
+  /*margin-top: 20px; margin-left: -50px; */
+}
+word[class=page_number] {
+  display: block;
+  text-align: right;
+  color: var(--offblack06);
+  font-style: italic;
+  /*margin-bottom: 20px;
+  padding: 0;*/
+}
+word[class=margin_top_right] {
+  display: block;
+  text-align: right;
+  /*margin-left: -50px;*/
+  color: var(--offblack06);
+  font-style: italic;
+}
+word[class=margin_left] {
+  /*position: relative;
+  float: left;
+  width: 20px;
+  margin-left: -60px;*/
+  font-style: italic;
+  font-size: 12px;}
+
+.assinatura,
+.assinatura a:link, .assinatura a:focus, .assinatura a:active  {color: var(--offblack07); font-style: italic;}
+
+p.blank {
+  text-align: left;
+  color: var(--offblack06);
+  font-style: italic;
+  padding: 50px;
+  width: 200px;
+  height: 330px;
+}
+
+
+/*special case - words in the margin*/
+word[class=margin_left] {width: 20px; margin-left: -65px; padding-left: -90px;}
+word[class=margin_left]:hover:before {
+  width: 80px;
+  margin-right: -15px; margin-left: -100px;
+  padding-left: -90px;
+  margin-top: 30px;
+  font-size: 12px;
+  background: var(--offwhite04); background-color: var(--offwhite04);
+}
+word[class=margin_left] {
+  position: relative;
+  float: left;
+  width: 20px;
+  margin-left: -60px;
+  font-style: italic;
+  font-size: 12px;}
+
+word[class=margin_left]:hover {
+  width: 50px;
+  padding-top: 30px;
+  margin-top: -30px;
+  margin-left: -70px;
+  padding-left: 10px;
+  text-align:left;
+  background-color: var(--softyellow);
+  background: var(--softyellow);}
+
+/*word[class=margin_left]:hover {padding: 0;}*/
+
+
+/*special styles to gradate appearances of layered classes
+a:link, a:visited, a:active, a:focus {color: var(--offblack08);}
+word[class]  {color: var(--offblack08);}
+word > a  {color: var(--offblack07);}
+word[class] > a  {color: var(--offblack06);}
+a:hover {color: var(--black);}
+word:hover > a  {color: var(--black);}
+word[class]:hover  {color: var(--black);}*/
+
+
+
+
+/*-------MC classes end-------*/
+/*------------------------------- */
+
+
+
+/*===============================================================*/
+
+/*-----------------INSTRUCTIONS FOR EDICTOR DIVS ----------------*/
+
+/*==============================================================*/
+
+
+p.capitular::first-letter {
+    font-size: 4.5em; float: left; margin-top: .12em; margin-bottom: .20em; margin-right: .12em;}
+p.capitular::first-letter:hover {color: #ffffff;}
+
+span.el_type_color {
+  color:#aaa;
+  font-weight:normal;
+  text-decoration: none;
+  text-style: none;}
+
+span.el_type {
+  color:#aaa;
+  vertical-align:sub;
+  font-size:7pt;
+  font-weight:normal;
+  text-decoration: none;
+  text-style: none;}
+
+div.cap {
+  float:left;
+  font-size:28pt;
+  display:block;
+  margin-top:10px;
+  padding-right:5px;}
+
+.small_text{
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  color: #000000;
+  font-size: 10px; }
+
+/* Layout Divs */
+
+/*#text_content > div {
+    padding: 20px;
+    border: 1px solid transparent;
+    background: #ffffff;
+    width: 50%;
+    border-right: 2px dotted transparent;
+  }*/
+
+  /*//////////////////////////////////
+  @media screen and (max-width: 1000px) {
+      #text_content > div  {
+       width: 100%;
+          }
+  }
+  ///////////////////////////////////*/
+
+.text_data {
+  display: none;
+  background:#009999;
+  color:#fff;
+  border: 1px solid #666666;
+  padding:10px;
+  font-size:8pt;
+  font-family:Arial;}
+
+.catalog_file {
+  width: 80%;
+  padding: 15px;
+  position: relative;
+  margin-top: 20px;
+  border: 1px solid transparent;
+  background-color: #ffffff;
+  text-align: left; }
+
+#content {
+  width: 100%;
+  border-top: 10px solid #666666;
+  /*background: #333333;
+  background-color: #333333;*/
+}
+
+#text_content{
+  width: 90%;
+  border: 1px solid transparent;
+  padding: 10px;
+  margin-bottom: 25px;
+  background-color:#ffffff;
+  line-height: 18px;
+  text-align: justify; }
+
+/*#text_content p { margin-left: 100px;}*/
+
+#text_content div.footer {
+  border-top: 1px dotted transparent;
+  text-align: left;
+}
+
+#text_content div.header {
+  border-bottom: 1px dotted #bfbfbf;
+  padding: 0px;
+  margin: 0px;
+  margin-bottom:25px;
+  font-size: 8pt;}
+
+
+
+    #comments {
+      display: none;
+      position: fixed;
+      width: 40%; height: 350px;
+      right:0; top: 0;
+      margin-top: 1.5em; margin-right: 1.3em; margin-bottom: 3em; margin-left: 0;
+
+      padding: 10px 10px 10px 20px;
+      background-color: transparent;
+      font-size: 14px;
+      font-style: italic;
+      color: #999999;
+      text-align: left;
+
+    }
+
+  /* Comment elements */
+
+  TABLE.comment { width: 95%;}
+
+  TD.commentAuthor {
+    padding: 2px;
+    width: 10%;
+    white-space: nowrap;
+    background: #333333;
+    color: #dfdfdf;
+    text-align: center;
+    border-bottom: 2px solid white; }
+
+  TD.commentBody {
+    padding: 3px;
+    background: #ffffff;
+    color: #336633;
+    border-top: 1px solid #666666;
+    border-bottom: 1px solid #666666; }
+
+  SPAN.mark {
+    background: #ffff07;
+    padding: 1px;
+    text-decoration: inherit; }
+
+  SPAN.unmark {
+    background: transparent;
+    padding: 1px;
+    text-decoration: inherit; }
+
+
+    /* Fac-simile */
+    #text_content table {width: 900px; border: 1px solid transparent;}
+    #text_content td.bar {height:0px; background: transparent;}
+    #text_content td.fac-simile {width: 420px; padding: 0px; }
+    #text_content td.fac-simile img {width: 400px; padding: 0 20px 0 0; border: 1px solid (--offblack);}
+    #text_content td.page {
+      width: 450px;
+      height: 530px;
+      padding: 50px 3px 3px 70px;
+      text-align: left;
+      border: 1px solid (--offblack);
+      box-shadow: 2px 1px 10px 0px rgba(0,0,0,0.5);
+    }
+
+
+    /*//////////////////////////////////*/
+    @media screen and (max-width: 1200px) {
+      #text_content table {width: 600px;}
+      #text_content td.fac-simile {width: 280px;}
+      #text_content td.fac-simile img {width: 280px; padding-right: 8px;}
+      #text_content td.page {width: auto;}
+    }
+    /*//////////////////////////////////*/
+
+.fac-simile a:hover:after {display: none;}
+.fac-simile a:hover {border-bottom: none;}

@@ -1,0 +1,121 @@
+body {
+    font-size: 100%;
+    font-family: 'Gentium Book Basic', serif;
+
+}
+.header {
+      position: fixed;
+			top: 0;
+      margin: 0px;
+      padding: 0px;
+
+			height: 50px;
+			width: 100%;
+			background: #ffffff;
+
+			border-bottom: 1px solid #ffffff;
+
+			color: #000000;
+			font-family: "Gentium Book Basic", "Times New Roman", serif;
+	}
+
+  /*header formats*/
+
+     .header-text {display: block;  color: #000000; font-size: 24px; padding-bottom: 0px; padding-top: 20px; margin-bottom: 8px; }
+     .header-links {margin-bottom: 2px; margin-left: 5px;  color: #000000;}
+
+     .header-text a:link { color: #000000; text-decoration: none;	padding: 2px 2px 2px 2px; }
+     .header-text a:visited { color: #000000; text-decoration: none;	padding: 2px 2px 2px 2px; }
+     .header-text a:active { color: #000000; text-decoration: none;	padding: 2px 2px 2px 2px; }
+     .header-text a:hover { color: #ff6666; text-decoration: none;	padding: 2px 2px 2px 2px; }
+
+
+
+   .manual_nav {
+
+      position: fixed;
+      margin-top: 30px;
+      background-color: #ffffff;
+      width:190px;
+      height:100%;
+      border: 0;
+      scrolling: no;
+   }
+   .manual-nav-div {font-size: 0.9em; background-color:#ffffff; border: 1px solid #cccccc; padding: 5px; /*line-height: 14px;*/}
+   .manual-nav-note { color: #999999; font-style: italic; display: block; padding: 5px 0px 0px 5px;}
+
+   .content { margin: 40px 0px 0px 200px; padding-left: 20px; padding-right: 5px; font-family: "Gentium Book Basic", "Times New Roman", serif;}
+
+   .ex-color { color: #000000; }/*#c2d6d6;*/ /*background-color: #d9d9d9;*/
+   .ex-color-2 {color: #000000; } /*background-color:#d9d9d9;*/
+   .ex-color-3 {color: #000000; background-color:#ffcccc;} /*background-color:#d9d9d9;*/
+
+   .normal-text {font-size: 1em; display: block; padding: 5px 0px 5px 0px;}
+   .normal-text-0 {font-size: 1em; display: block; padding: 5px 0px 5px 0px;}
+
+   .list {font-size: 1em; display: block; padding: 15px 15px 15px 15px; color: #666666;}
+   .strong-block {font-size: 1em; font-weight: bold; display: block; padding: 10px 0px 10px 0px;}
+   .note { font-size: 1em; color: #999999; font-style: italic; display: block; padding-bottom: 10px;}
+
+
+   h1 {font-size: 2.2em; padding-top: 40px; font-weight: normal;}
+   h2 {font-size: 1.9em; font-weight: normal;}
+   h3 {font-size: 1.6em; font-weight: normal;}
+   h4 {font-size: 1.4em; font-weight: normal;}
+
+  /* .header-text {margin-bottom: 8px; display: block;  color: #000000;}
+   .manual-header-text {margin-bottom: 2px; display: block; color: #000000;}
+   .header-links {margin-bottom: 15px; margin-left: 0px;  color: #666666; border-bottom: 0px solid #333333;}*/
+   .manual-header-links {margin-bottom: 0px; margin-left: 0px;  color: #666666; border-bottom: 0px solid #333333;}
+   /*.header-h { font-family: "Gentium Book Basic", "Times New Roman", serif; font-size: 22px; }*/
+
+/*link formats*/
+
+   a.manual-nav:link { color: #999999; text-decoration: none; font-size: 1em; /*font-family: monospace;*/	 }
+   a.manual-nav:visited { color: #999999; text-decoration: none; font-size: 1em;  }
+   a.manual-nav:active { color: #ff6666; text-decoration: none;	font-size: 1em;  }
+   a.manual-nav:hover { color: #ff6666; text-decoration: none; font-size: 1em;	 ; }
+   a.manual-nav:focus { color: #ff6666; text-decoration: none; margin-top: -175px; padding-top: 175px; outline: none;}
+
+/*nav link formats*/
+
+   .header-links {margin-bottom: 10px;  margin-left: 12px; color: #000000;  }
+   a.hlinks:link { color: #669999; text-decoration: none;  margin-left: 5px;	 }
+   a.hlinks:visited { color: #669999; text-decoration: none; margin-left: 5px;	 }
+   a.hlinks:active { color: #ff6666; text-decoration: none; margin-left: 5px;	 }
+   a.hlinks:hover { color: #ff6666; text-decoration: none; margin-left: 5px;	 }
+
+   .hlinks-no { color: #999999; text-decoration: none;  margin-left: 5px;	 }
+
+   a:link { color: #669999; text-decoration: none;	 }
+   a:visited { color: #669999; text-decoration: none;	 }
+   a:active { color: #ff6666; text-decoration: none;	 }
+   a:hover { color: #ff6666; text-decoration: none;	 }
+   a:focus { color: #ff6666; text-decoration: none; margin-top: -170px; padding-top: 170px; outline: none;}
+
+
+   /*pre styles*/
+
+
+   .ex {  color: #000000; vertical-align: top; line-height: 16px;  padding: 2px; font-size: 1em; } /* #ff8080 #ffcccc;*/ /*display: inline-block*/
+   .ex-id {color: #000000; font-weight: normal; background-color: #ffcccc;} /*background-color: #ffffff;*/ /*#ffcccc; #e6e6e6;*/
+   .ex-top {color: #000000; } /*#ffcccc;*/
+   .ex-nr {color: #999999; }
+
+   .before-tree { white-space: pre-wrap; margin: 10px 0px 0px 0px; padding: 0px; font-size: 1em; color: #000000; }
+
+   .tree { overflow: auto; width: 90%; margin-left: 45px; padding: 15px; font-size: 0.900em; line-height: 15px; color: #666666; border: 1px solid #cccccc; background-color:#d1e0e0;}
+   .tree2 { overflow: auto; width: 90%; margin-left: 45px; padding: 15px; font-size: 0.900em; line-height: 15px; color: #666666; border: 1px solid #cccccc; background-color:#d1e0e0;}
+   .small-tree { overflow: auto; width: 700px; height: 400px; margin-left: 33px; padding: 8px; font-size: 0.9em; line-height: 15px; color: #000000; border: 1px solid #cccccc; } /*background-color:#e6e6e6;*/
+
+   .after-tree { white-space: pre-wrap;  width: 92%; margin: 5px 0px 40px 45px; padding: 5px; font-size: 0.900em; color: #666666;  border: 1px solid #cccccc; }
+
+   .zero1 {white-space: pre-wrap;margin-left: 5px; padding:5px; font-size: 1em; color: #999999;}
+   .zero2 {white-space: pre-wrap;margin-left:40px;padding:5px;font-size:1em;color:#999999;}
+   .zero3 {white-space: pre-wrap;margin-left:10px;padding:5px;font-size:1em;color:#999999;}
+   .zero4 {white-space: pre-wrap;margin-left:5px;padding:5px;font-size:1em;color:#999999;}
+   .zero5 {white-space: pre-wrap;margin-left:20px;padding:5px;font-size:1em;color:#999999;}
+   .zero6 {white-space: pre-wrap;margin-left:50px;padding:5px;font-size:1em;color:#999999;}
+
+   /*TREE 1 was pre style="margin-left: 33px; padding: 5px; font-size: 14px; line-height: 14px; color: #000000; border-style: dotted dashed dotted dotted; border-width: 1px; border-right-color: #f0f0f0;"*/
+   /*TREE2 was margin-left: 75px; padding: 5px; font-size: 14px; line-height: 14px; color: #000000; border-style: dotted dashed dotted dotted; border-width: 1px;*/
